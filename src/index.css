@@ -7,9 +7,29 @@
   --color-brand-dark: #0a0a0a;
 }
 
+/* Global Scrollbar Hide */
+* {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+*::-webkit-scrollbar {
+  display: none;
+}
+
+@layer utilities {
+  .text-stroke {
+    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.4);
+  }
+  .text-stroke-thick {
+    -webkit-text-stroke: 4px rgba(255, 255, 255, 0.3);
+  }
+}
+
 @layer base {
   body {
     font-family: var(--font-family-sans);
     @apply antialiased text-gray-900 bg-white;
+    overflow-x: hidden;
   }
 }
