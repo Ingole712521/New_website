@@ -1,4 +1,4 @@
-import logoWhite from '../assets/image/logo-white.png';
+import logoIcon from '../assets/image/R Square Visuals icon.png';
 
 export function Footer() {
     return (
@@ -7,8 +7,8 @@ export function Footer() {
                 <div className="grid grid-cols-2 lg:grid-cols-6 gap-12 mb-40">
                     <div className="col-span-2">
                         <div className="flex items-center mb-6">
-                           <img src={logoWhite} alt="R Square Visuals" className="h-8 w-auto mr-3" />
-                           <span className="font-bold text-xl tracking-tight text-white italic">R Square Visuals</span>
+                           <img src={logoIcon} alt="R Square Visuals" className="h-10 w-auto mr-3" />
+                           {/* <span className="font-bold text-xl tracking-tight text-white italic">R Square Visuals</span> */}
                         </div>
                         <p className="text-gray-500 text-sm mt-4 font-medium leading-relaxed">
                             © copyright R Square Visuals 2024. <br />
