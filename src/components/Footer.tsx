@@ -59,7 +59,7 @@ export function Footer() {
 
 
             <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-screen pointer-events-none select-none overflow-hidden translate-y-[15%] flex justify-center">
-                <h2 className="text-[18vw] font-black text-white/[0.03] leading-none tracking-tighter uppercase whitespace-nowrap">
+                <h2 className="text-[18vw] font-black leading-none tracking-tighter uppercase whitespace-nowrap text-transparent bg-clip-text bg-gradient-to-b from-white/[0.08] to-transparent">
                     R Square
                 </h2>
             </div>
