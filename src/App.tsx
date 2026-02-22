@@ -12,6 +12,7 @@ import { TextReveal } from './components/TextReveal';
 import { Methodology } from './components/Methodology';
 import { Stats } from './components/Stats';
 import { CaseStudies } from './components/CaseStudies';
+import { Portfolio } from './components/Portfolio';
 import { CTA } from './components/CTA';
 import { ParticleSection } from './components/ParticleSection';
 import { Footer } from './components/Footer';
@@ -36,6 +37,7 @@ function App() {
         <Methodology />
         <Stats />
         <CaseStudies />
+        <Portfolio />
         <CTA />
         <ParticleSection />
         <Footer />

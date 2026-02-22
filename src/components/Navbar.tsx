@@ -1,5 +1,6 @@
 import React from 'react';
 import { Search, Menu, X } from 'lucide-react';
+import logoWhite from '../assets/image/logo-white.png';
 
 export function Navbar() {
   const [isOpen, setIsOpen] = React.useState(false);
@@ -9,7 +10,7 @@ export function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           <div className="flex-shrink-0 flex items-center cursor-pointer" onClick={() => window.scrollTo(0, 0)}>
-            <img src="/image/R Square Visuals white.png" alt="R Square Visuals" className="h-10 w-auto mr-2" />
+            <img src={logoWhite} alt="R Square Visuals" className="h-10 w-auto mr-2" />
             <span className="font-bold text-xl tracking-tight text-white">R Square Visuals</span>
           </div>
           <div className="hidden md:flex space-x-8 items-center">

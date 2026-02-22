@@ -1,5 +1,6 @@
 
 import { Globe } from 'lucide-react';
+import logoWhite from '../assets/image/logo-white.png';
 
 export function Footer() {
     return (
@@ -8,7 +9,7 @@ export function Footer() {
                 <div className="grid grid-cols-2 lg:grid-cols-5 gap-10 mb-16">
                     <div className="col-span-2 lg:col-span-2">
                         <div className="flex items-center mb-6">
-                           <img src="/image/R Square Visuals white.png" alt="R Square Visuals" className="h-10 w-auto mr-2" />
+                           <img src={logoWhite} alt="R Square Visuals" className="h-10 w-auto mr-2" />
                            <span className="font-bold text-xl tracking-tight text-white">R Square Visuals</span>
                         </div>
                         <p className="text-gray-400 text-sm leading-relaxed max-w-sm mb-6">
