@@ -1,67 +1,67 @@
-
-import { Globe } from 'lucide-react';
 import logoWhite from '../assets/image/logo-white.png';
 
 export function Footer() {
     return (
-        <footer className="bg-black pt-20 pb-10 border-t border-white/5">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="grid grid-cols-2 lg:grid-cols-5 gap-10 mb-16">
-                    <div className="col-span-2 lg:col-span-2">
+        <footer className="bg-black pt-32 pb-20 border-t border-white/5 relative overflow-x-hidden">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div className="grid grid-cols-2 lg:grid-cols-6 gap-12 mb-40">
+                    <div className="col-span-2">
                         <div className="flex items-center mb-6">
-                           <img src={logoWhite} alt="R Square Visuals" className="h-10 w-auto mr-2" />
-                           <span className="font-bold text-xl tracking-tight text-white">R Square Visuals</span>
+                           <img src={logoWhite} alt="R Square Visuals" className="h-8 w-auto mr-3" />
+                           <span className="font-bold text-xl tracking-tight text-white italic">R Square Visuals</span>
                         </div>
-                        <p className="text-gray-400 text-sm leading-relaxed max-w-sm mb-6">
-                            The essential growth architecture for the visionary tech sector. Where data meets design.
+                        <p className="text-gray-500 text-sm mt-4 font-medium leading-relaxed">
+                            © copyright R Square Visuals 2024. <br />
+                            All rights reserved.
                         </p>
-                        <div className="flex space-x-4">
-                             {[1, 2, 3, 4].map((i) => (
-                                <div key={i} className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-gray-400 hover:bg-blue-500/20 hover:text-blue-400 transition-colors cursor-pointer hover:scale-110 transition-transform">
-                                    <Globe size={16} />
-                                </div>
-                             ))}
-                        </div>
                     </div>
+
                     <div>
-                        <h4 className="font-bold text-white mb-6 text-sm uppercase tracking-wider">Solutions</h4>
-                        <ul className="space-y-3 text-sm text-gray-400">
-                            <li><a href="#" className="hover:text-blue-400">Enterprise SEM</a></li>
-                            <li><a href="#" className="hover:text-blue-400">Technical Content</a></li>
-                            <li><a href="#" className="hover:text-blue-400">Video Production</a></li>
-                            <li><a href="#" className="hover:text-blue-400">Portfolio Launch</a></li>
-                            <li><a href="#" className="hover:text-blue-400">Product Analytics</a></li>
+                        <h4 className="font-bold text-white mb-8 text-sm tracking-wider uppercase opacity-30">Pages</h4>
+                        <ul className="space-y-4 text-sm text-gray-400">
+                            <li><a href="#" className="hover:text-white transition-colors duration-300">All Products</a></li>
+                            <li><a href="#" className="hover:text-white transition-colors duration-300">Studio</a></li>
+                            <li><a href="#" className="hover:text-white transition-colors duration-300">Clients</a></li>
+                            <li><a href="#" className="hover:text-white transition-colors duration-300">Pricing</a></li>
+                            <li><a href="#" className="hover:text-white transition-colors duration-300">Blog</a></li>
                         </ul>
                     </div>
+
                     <div>
-                        <h4 className="font-bold text-white mb-6 text-sm uppercase tracking-wider">Resources</h4>
-                        <ul className="space-y-3 text-sm text-gray-400">
-                            <li><a href="#" className="hover:text-blue-400">Client Case Studies</a></li>
-                            <li><a href="#" className="hover:text-blue-400">Community</a></li>
-                            <li><a href="#" className="hover:text-blue-400">White papers</a></li>
-                            <li><a href="#" className="hover:text-blue-400">API Docs</a></li>
-                            <li><a href="#" className="hover:text-blue-400">Media Assets</a></li>
+                        <h4 className="font-bold text-white mb-8 text-sm tracking-wider uppercase opacity-30">Socials</h4>
+                        <ul className="space-y-4 text-sm text-gray-400">
+                            <li><a href="#" className="hover:text-white transition-colors duration-300">Facebook</a></li>
+                            <li><a href="#" className="hover:text-white transition-colors duration-300">Instagram</a></li>
+                            <li><a href="#" className="hover:text-white transition-colors duration-300">Twitter</a></li>
+                            <li><a href="#" className="hover:text-white transition-colors duration-300">LinkedIn</a></li>
                         </ul>
                     </div>
-                     <div>
-                        <h4 className="font-bold text-white mb-6 text-sm uppercase tracking-wider">Get in Touch</h4>
-                         <ul className="space-y-3 text-sm text-gray-400">
-                            <li>New York</li>
-                            <li>Atlanta</li>
-                            <li>San Francisco</li>
-                            <li>London (UK)</li>
-                            <li>Singapore</li>
+
+                    <div>
+                        <h4 className="font-bold text-white mb-8 text-sm tracking-wider uppercase opacity-30">Legal</h4>
+                        <ul className="space-y-4 text-sm text-gray-400">
+                            <li><a href="#" className="hover:text-white transition-colors duration-300">Privacy Policy</a></li>
+                            <li><a href="#" className="hover:text-white transition-colors duration-300">Terms of Service</a></li>
+                            <li><a href="#" className="hover:text-white transition-colors duration-300">Cookie Policy</a></li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h4 className="font-bold text-white mb-8 text-sm tracking-wider uppercase opacity-30">Register</h4>
+                        <ul className="space-y-4 text-sm text-gray-400">
+                            <li><a href="#" className="hover:text-white transition-colors duration-300">Sign Up</a></li>
+                            <li><a href="#" className="hover:text-white transition-colors duration-300">Login</a></li>
+                            <li><a href="#" className="hover:text-white transition-colors duration-300">Forgot Password</a></li>
                         </ul>
                     </div>
                 </div>
-                <div className="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500">
-                    <p>© 2026 HumanDigital Inc. All rights reserved. 2024 Design Trends.</p>
-                    <div className="flex space-x-6 mt-4 md:mt-0">
-                        <a href="#" className="hover:text-gray-400">Privacy Policy</a>
-                        <a href="#" className="hover:text-gray-400">Terms of Service</a>
-                         <a href="#" className="hover:text-gray-400">Cookies</a>
-                    </div>
-                </div>
+            </div>
+
+            {/* Large Background Text - Massive, centered, and bleeding off the sides for that premium look */}
+            <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-screen pointer-events-none select-none overflow-hidden translate-y-[15%] flex justify-center">
+                <h2 className="text-[18vw] font-black text-white/[0.03] leading-none tracking-tighter uppercase whitespace-nowrap">
+                    R Square
+                </h2>
             </div>
         </footer>
     )

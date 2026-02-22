@@ -8,12 +8,13 @@ import { useSmoothScroll } from './hooks/useSmoothScroll';
 // Components
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
+import { Marquee } from './components/Marquee';
 import { TextReveal } from './components/TextReveal';
 import { Methodology } from './components/Methodology';
 import { Stats } from './components/Stats';
 import { CaseStudies } from './components/CaseStudies';
 import { Portfolio } from './components/Portfolio';
-import { CTA } from './components/CTA';
+import { Contact } from './components/Contact';
 import { ParticleSection } from './components/ParticleSection';
 import { Footer } from './components/Footer';
 import { Preloader } from './components/Preloader';
@@ -33,12 +34,13 @@ function App() {
       <Navbar />
       <div className={`${isLoading ? 'h-screen overflow-hidden' : ''}`}>
         <Hero />
+        <Marquee />
         <TextReveal />
         <Methodology />
         <Stats />
         <CaseStudies />
         <Portfolio />
-        <CTA />
+        <Contact />
         <ParticleSection />
         <Footer />
       </div>

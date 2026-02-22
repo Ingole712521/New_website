@@ -1,89 +1,167 @@
-import React, { useLayoutEffect } from 'react';
-import { BarChart3, Zap, Globe, ShieldCheck, Database, TrendingUp, ChevronDown, ArrowRight } from 'lucide-react';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { BentoGrid, BentoGridItem } from './ui/bento-grid';
+import { Globe3D } from './ui/3d-globe';
+import { Palette, PenTool, Share2, Monitor, Globe, Type } from 'lucide-react';
+
+const markers = [
+  { lat: 12.9716, lng: 77.5946, src: "", label: "Bangalore" },
+  { lat: 23.0225, lng: 72.5714, src: "", label: "Ahmedabad" },
+  { lat: 40.7128, lng: -74.006, src: "", label: "New York" },
+  { lat: 51.5074, lng: -0.1278, src: "", label: "London" },
+];
 
 export function Methodology() {
-    const containerRef = React.useRef(null);
-    const titleRef = React.useRef(null);
-    // Add specific ref for the grid container
-    const gridRef = React.useRef(null); 
-    
-    const methods = [
-        { icon: <BarChart3 className="w-6 h-6 text-blue-600" />, title: "Market Analytics", desc: "Deep-dive data analysis to uncover hidden market opportunities." },
-        { icon: <Zap className="w-6 h-6 text-orange-500" />, title: "Technical Narrative Engineering", desc: "Compelling storytelling that bridges technical specs with business value." },
-        { icon: <Globe className="w-6 h-6 text-green-500" />, title: "Growth Infrastructure", desc: "Building scalable digital ecosystems for sustained expansion." },
-        { icon: <ShieldCheck className="w-6 h-6 text-indigo-500" />, title: "Security Authority Dominance", desc: "Positioning your brand as the trusted standard in cybersecurity." },
-        { icon: <Database className="w-6 h-6 text-purple-500" />, title: "Data-Led Community Growth", desc: "Fostering engaged communities through data-backed content strategies." },
-        { icon: <TrendingUp className="w-6 h-6 text-rose-500" />, title: "Full-Stack Performance Analytics", desc: "End-to-end tracking of every user interaction for maximum optimization." },
-    ];
-    
-    useLayoutEffect(() => {
-        const ctx = gsap.context(() => {
-            gsap.from(titleRef.current, {
-                scrollTrigger: {
-                    trigger: titleRef.current,
-                    start: "top 80%",
-                },
-                y: 30,
-                opacity: 0,
-                duration: 1,
-                ease: "power3.out"
-            });
-            
-            // Refactored to use ScrollTrigger.batch for robust grid animations
-            // First, set initial state of all cards to hidden
-            gsap.set(".method-card", { y: 50, opacity: 0 });
-
-            // Create a batch trigger to animate cards as they enter the viewport
-            ScrollTrigger.batch(".method-card", {
-                onEnter: (elements) => {
-                    gsap.to(elements, {
-                        opacity: 1, 
-                        y: 0, 
-                        stagger: 0.15, 
-                        duration: 0.8, 
-                        ease: "power2.out",
-                        overwrite: true
-                    });
-                },
-                start: "top 90%", // Trigger when top of element is 90% down viewport
-                once: true // Only run once
-            });
-        }, containerRef);
-        return () => ctx.revert();
-    }, []);
-
   return (
-    <div className="py-24 bg-black section-methodology border-t border-white/5" ref={containerRef}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col md:flex-row justify-between items-end mb-16" ref={titleRef}>
-            <h2 className="text-4xl font-bold text-white max-w-md">Our Methodology</h2>
-             <p className="text-gray-400 max-w-lg mt-4 md:mt-0">
-                Our approach is full-spectrum. We don't just execute; we architect. We turn technical complexity into business clarity for F500 & SaaS companies.
-            </p>
-            <button className="hidden md:flex items-center text-sm font-semibold text-white border border-white/10 px-4 py-2 rounded-lg hover:bg-white/5 hover:border-white/20 transition-colors">
-                Expand Analysis <ChevronDown className="ml-2 w-4 h-4"/>
-            </button>
+    <section className="relative z-10 mt-[20vh] py-24 bg-[#0a0a0a] overflow-hidden shadow-[0_-20px_50px_rgba(0,0,0,0.8)]">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="text-center mb-16">
+          <h2 className="text-3xl md:text-5xl font-bold text-white mb-4 tracking-tight uppercase">
+            What we Provide
+          </h2>
+          <p className="text-gray-400 text-lg">
+            Empowering your brand through strategic design and innovative visualization.
+          </p>
         </div>
- 
-        {/* Added ref to the grid container */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8" ref={gridRef}>
-            {methods.map((item, idx) => (
-                <div key={idx} className="method-card bg-white/5 p-8 rounded-2xl border border-white/10 shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 group cursor-default">
-                    <div className="w-12 h-12 bg-white/5 rounded-xl flex items-center justify-center mb-6 group-hover:bg-blue-500/20 group-hover:scale-110 transition-all duration-300">
-                        {item.icon}
-                    </div>
-                    <div className="text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">Step 0{idx + 1}</div>
-                    <h3 className="text-xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors">{item.title}</h3>
-                    <p className="text-gray-400 leading-relaxed text-sm">{item.desc}</p>
-                    <a href="#" className="inline-flex items-center text-blue-400 mt-6 text-sm font-semibold hover:text-blue-300 group-hover:translate-x-2 transition-transform">
-                        See Detailed Case <ArrowRight className="ml-1 w-4 h-4" />
-                    </a>
-                </div>
-            ))}
-        </div>
+
+        <BentoGrid className="max-w-7xl mx-auto md:auto-rows-[20rem]">
+          {/* Brand Development - md:col-span-2 */}
+          <BentoGridItem
+            title="Brand Development"
+            description="Brand development is the process of strengthening your brand identity and helping you attain an edge over other competitors in the market."
+            header={<BrandSkeleton />}
+            className="md:col-span-2"
+            icon={<Palette className="w-4 h-4 text-orange-500" />}
+          />
+          
+          {/* Print Identity - md:col-span-1 */}
+          <BentoGridItem
+            title="Print Identity"
+            description="We create the print identity of your brand through colors, fonts, and design language that clearly establish a recall memory."
+            header={<PrintSkeleton />}
+            className="md:col-span-1"
+            icon={<PenTool className="w-4 h-4 text-blue-500" />}
+          />
+
+          {/* Digital Identity - md:col-span-1 */}
+          <BentoGridItem
+            title="Digital Identity"
+            description="We turbocharge your brand and elevate your digital presence with our digital communication tools."
+            header={<DigitalSkeleton />}
+            className="md:col-span-1"
+            icon={<Share2 className="w-4 h-4 text-purple-500" />}
+          />
+
+          {/* 3D Visualization - md:col-span-1 (The Globe) */}
+          <BentoGridItem
+            title="3D Visualization"
+            description="Every business has a story to tell and we very well narrate your story to the world and bring your brand to the forefront."
+            header={<GlobeHeader />}
+            className="md:col-span-1"
+            icon={<Globe className="w-4 h-4 text-cyan-500" />}
+          />
+
+          {/* Communication Strategy - md:col-span-1 */}
+          <BentoGridItem
+            title="Communication Strategy"
+            description="Content is king and we strongly believe in communicating your brand through words that express who you are and what makes you different."
+            header={<CommunicationSkeleton />}
+            className="md:col-span-1"
+            icon={<Monitor className="w-4 h-4 text-pink-500" />}
+          />
+
+          {/* Content Writing - md:col-span-3 */}
+          <BentoGridItem
+            title="Content Writing"
+            description="We write content that people can connect with. We provide crystal clear messaging in best way possible."
+            header={<ContentSkeleton />}
+            className="md:col-span-3"
+            icon={<Type className="w-4 h-4 text-green-500" />}
+          />
+        </BentoGrid>
       </div>
-    </div>
+    </section>
   );
 }
+
+const BrandSkeleton = () => (
+  <div className="flex flex-1 w-full h-full min-h-[6rem] rounded-xl bg-gradient-to-br from-neutral-200 dark:from-neutral-900 dark:to-neutral-800 to-neutral-100 p-8 overflow-hidden relative group">
+    <div className="absolute top-0 right-0 w-32 h-32 bg-orange-500/10 blur-3xl rounded-full" />
+    <div className="relative z-10 flex flex-col justify-center h-full">
+      <div className="flex items-center gap-4 mb-4">
+          <div className="w-12 h-12 rounded-lg bg-orange-500/20 flex items-center justify-center">
+              <Palette className="w-6 h-6 text-orange-400" />
+          </div>
+          <div className="h-0.5 w-16 bg-orange-500/20" />
+          <div className="w-24 h-8 rounded bg-white/5 border border-white/10" />
+      </div>
+      <div className="space-y-2">
+          <div className="h-2 w-3/4 bg-white/5 rounded" />
+          <div className="h-2 w-1/2 bg-white/5 rounded" />
+      </div>
+    </div>
+  </div>
+);
+
+const PrintSkeleton = () => (
+  <div className="flex flex-1 w-full h-full min-h-[6rem] rounded-xl bg-gradient-to-br from-neutral-200 dark:from-neutral-900 dark:to-neutral-800 to-neutral-100 p-4 flex-col justify-center items-center relative overflow-hidden">
+     <div className="p-4 bg-white/5 border border-white/10 rounded-2xl backdrop-blur-sm -rotate-6 group-hover:rotate-0 transition-transform">
+        <PenTool className="w-10 h-10 text-blue-400" />
+     </div>
+     <div className="mt-4 flex gap-1">
+         {[1,2,3].map(i => <div key={i} className="w-1 h-1 rounded-full bg-blue-500/40" />)}
+     </div>
+  </div>
+);
+
+const DigitalSkeleton = () => (
+  <div className="flex flex-1 w-full h-full min-h-[6rem] rounded-xl bg-gradient-to-br from-neutral-200 dark:from-neutral-900 dark:to-neutral-800 to-neutral-100 p-4 flex-col justify-center items-center group">
+      <div className="relative scale-90 group-hover:scale-100 transition-transform">
+          <div className="absolute inset-0 bg-purple-500/20 blur-xl rounded-full" />
+          <Share2 className="w-12 h-12 text-purple-400 relative z-10" />
+      </div>
+  </div>
+);
+
+const GlobeHeader = () => (
+  <div className="flex flex-1 w-full h-full min-h-[6rem] rounded-xl bg-[#030303] overflow-hidden relative">
+    <Globe3D 
+      markers={markers}
+      config={{
+        atmosphereColor: "#4da6ff",
+        atmosphereIntensity: 15,
+        autoRotateSpeed: 0.1,
+      }}
+    />
+  </div>
+);
+
+const CommunicationSkeleton = () => (
+  <div className="flex flex-1 w-full h-full min-h-[6rem] rounded-xl bg-gradient-to-br from-neutral-200 dark:from-neutral-900 dark:to-neutral-800 to-neutral-100 p-4 flex-col justify-center items-center">
+      <div className="w-full flex flex-col gap-2 px-4">
+          <div className="h-2 w-[90%] bg-pink-500/20 rounded" />
+          <div className="h-2 w-[70%] bg-pink-500/20 rounded" />
+          <div className="h-2 w-[80%] bg-pink-500/20 rounded" />
+      </div>
+  </div>
+);
+
+const ContentSkeleton = () => (
+  <div className="flex flex-1 w-full h-full min-h-[6rem] rounded-xl bg-gradient-to-br from-neutral-200 dark:from-neutral-900 dark:to-neutral-800 to-neutral-100 p-8 flex-col justify-center relative overflow-hidden group">
+      <div className="absolute bottom-0 right-0 w-64 h-64 bg-green-500/5 blur-3xl rounded-full translate-x-1/2 translate-y-1/2" />
+      <div className="flex items-start gap-4 h-full">
+          <div className="p-4 bg-white/5 border border-white/10 rounded-2xl flex-shrink-0">
+              <Type className="w-8 h-8 text-green-400" />
+          </div>
+          <div className="mt-2 space-y-3 w-full max-w-lg">
+              <div className="h-3 w-full bg-white/5 rounded-full overflow-hidden">
+                  <div className="h-full bg-green-500/20 w-3/4 group-hover:w-full transition-all duration-1000" />
+              </div>
+              <div className="h-3 w-[80%] bg-white/5 rounded-full overflow-hidden">
+                  <div className="h-full bg-green-500/20 w-1/2 group-hover:w-[85%] transition-all duration-1000 delay-100" />
+              </div>
+               <div className="h-3 w-[90%] bg-white/5 rounded-full overflow-hidden">
+                  <div className="h-full bg-green-500/20 w-2/3 group-hover:w-[95%] transition-all duration-1000 delay-200" />
+              </div>
+          </div>
+      </div>
+  </div>
+);
