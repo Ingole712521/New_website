@@ -13,6 +13,7 @@ import { TextReveal } from './components/TextReveal';
 import { Methodology } from './components/Methodology';
 import { Stats } from './components/Stats';
 import { CaseStudies } from './components/CaseStudies';
+import { TechMarquee } from './components/TechMarquee';
 import { Portfolio } from './components/Portfolio';
 import { Contact } from './components/Contact';
 import { ParticleSection } from './components/ParticleSection';
@@ -39,6 +40,7 @@ function App() {
         <Methodology />
         <Stats />
         <CaseStudies />
+        <TechMarquee />
         <Portfolio />
         <Contact />
         <ParticleSection />
