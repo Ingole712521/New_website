@@ -30,10 +30,10 @@ export function TechMarquee() {
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-20 text-center relative z-10">
         <h2 className="text-4xl md:text-6xl font-bold text-white mb-6 uppercase tracking-tighter">
-            We Work on 
+            We Work on
         </h2>
-        <p className="text-gray-500 max-w-2xl mx-auto text-lg leading-relaxed">
-           A sneakpeekinto ourservices
+        <p className="text-gray-500 max-w-2xl mx-auto text-xl leading-relaxed">
+           A sneak peek into our services
         </p>
       </div>
 

@@ -1,5 +1,6 @@
 import { Mail } from 'lucide-react';
 import worldMap from '../assets/image/world.svg';
+import { cn } from '../lib/utils';
 
 export function Contact() {
   return (
@@ -54,48 +55,65 @@ export function Contact() {
             {/* Grid background effect */}
             <div className="absolute -inset-4 bg-gradient-to-r from-blue-500/5 to-purple-500/5 rounded-3xl blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-1000"></div>
             
-            <div className="relative bg-[#0A0A0A] border border-white/10 rounded-2xl p-8 md:p-10 shadow-2xl overflow-hidden">
-                {/* Subtle Grid Pattern Overlay */}
-                <div className="absolute inset-0 opacity-[0.03] pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle, white 1px, transparent 1px)', backgroundSize: '24px 24px' }}></div>
-                
-                <form className="space-y-6 relative z-10">
-                    <div className="space-y-2">
-                        <label className="text-xs font-bold text-gray-400 uppercase tracking-widest">Full name</label>
+            <div className="relative bg-[#0A0A0A]/80 border border-white/10 rounded-3xl p-8 md:p-12 shadow-2xl overflow-hidden group"
+                 style={{ 
+                   maskImage: 'linear-gradient(to bottom, black 0%, black 90%, transparent 100%)',
+                   WebkitMaskImage: 'linear-gradient(to bottom, black 0%, black 90%, transparent 100%)'
+                 }}>
+                {/* Consolidated Grid and Decorative Texture */}
+                <div className="absolute top-0 right-0 w-full h-[400px] pointer-events-none z-0"
+                    style={{ 
+                        maskImage: 'radial-gradient(circle at top right, black, transparent 75%)',
+                        WebkitMaskImage: 'radial-gradient(circle at top right, black, transparent 75%)'
+                    }}>
+                    <div className="absolute top-0 right-0 grid grid-cols-[repeat(20,24px)] grid-rows-[repeat(20,24px)] opacity-[0.08]">
+                        {[...Array(400)].map((_, i) => (
+                            <div key={i} className={cn(
+                                "w-[24px] h-[24px] border-r border-b border-white/20",
+                                [18, 19, 38, 39, 57, 58, 59, 78, 98].includes(i) ? "bg-white/10" : ""
+                            )}></div>
+                        ))}
+                    </div>
+                </div>
+
+                <form className="space-y-8 relative z-10">
+                    <div className="space-y-3">
+                        <label className="text-base font-bold text-white block tracking-wide">Full name</label>
                         <input 
                             type="text" 
-                            placeholder="Name" 
-                            className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3.5 text-white placeholder:text-gray-600 focus:outline-none focus:border-blue-500/50 focus:bg-white/[0.07] transition-all"
+                            placeholder="Enter your name" 
+                            className="w-full bg-[#1A1A1A] border border-white/5 rounded-lg px-4 py-4 text-white placeholder:text-gray-600 focus:outline-none focus:border-white/10 transition-all shadow-inner"
                         />
                     </div>
                     
-                    <div className="space-y-2">
-                        <label className="text-xs font-bold text-gray-400 uppercase tracking-widest">Email Address</label>
+                    <div className="space-y-3">
+                        <label className="text-base font-bold text-white block tracking-wide">Email Address</label>
                         <input 
                             type="email" 
-                            placeholder="support@RSquareVisuals.com" 
-                            className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3.5 text-white placeholder:text-gray-600 focus:outline-none focus:border-blue-500/50 focus:bg-white/[0.07] transition-all"
+                            placeholder="support@rsquare.com" 
+                            className="w-full bg-[#1A1A1A] border border-white/5 rounded-lg px-4 py-4 text-white placeholder:text-gray-600 focus:outline-none focus:border-white/10 transition-all shadow-inner"
                         />
                     </div>
                     
-                    <div className="space-y-2">
-                        <label className="text-xs font-bold text-gray-400 uppercase tracking-widest">Company</label>
+                    <div className="space-y-3">
+                        <label className="text-base font-bold text-white block tracking-wide">Company</label>
                         <input 
                             type="text" 
-                            placeholder="RSquareVisuals" 
-                            className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3.5 text-white placeholder:text-gray-600 focus:outline-none focus:border-blue-500/50 focus:bg-white/[0.07] transition-all"
+                            placeholder="Enter your company name" 
+                            className="w-full bg-[#1A1A1A] border border-white/5 rounded-lg px-4 py-4 text-white placeholder:text-gray-600 focus:outline-none focus:border-white/10 transition-all shadow-inner"
                         />
                     </div>
                     
-                    <div className="space-y-2">
-                        <label className="text-xs font-bold text-gray-400 uppercase tracking-widest">Message</label>
+                    <div className="space-y-3">
+                        <label className="text-base font-bold text-white block tracking-wide">Message</label>
                         <textarea 
-                            rows={4}
+                            rows={5}
                             placeholder="Type your message here" 
-                            className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3.5 text-white placeholder:text-gray-600 focus:outline-none focus:border-blue-500/50 focus:bg-white/[0.07] transition-all resize-none"
+                            className="w-full bg-[#1A1A1A] border border-white/5 rounded-lg px-4 py-4 text-white placeholder:text-gray-600 focus:outline-none focus:border-white/10 transition-all resize-none shadow-inner"
                         ></textarea>
                     </div>
                     
-                    <button className="bg-white/10 hover:bg-white/20 text-white font-bold py-3 px-8 rounded-lg border border-white/10 transition-all hover:scale-[1.02] active:scale-[0.98] shadow-lg">
+                    <button className="bg-[#1A1A1A] hover:bg-[#252525] text-white font-semibold py-3 px-10 rounded-lg border border-white/10 transition-all hover:scale-[1.02] active:scale-[0.98] shadow-lg">
                         Submit
                     </button>
                 </form>
