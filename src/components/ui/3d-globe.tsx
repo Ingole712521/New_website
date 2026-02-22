@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState, useMemo } from "react";
+import { useEffect, useRef, useMemo } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { OrbitControls, PerspectiveCamera } from "@react-three/drei";
 import ThreeGlobe from "three-globe";
@@ -25,7 +25,7 @@ interface Globe3DProps {
   onMarkerHover?: (marker: GlobeMarker | null) => void;
 }
 
-function GlobeInternal({ markers = [], config = {}, onMarkerClick, onMarkerHover }: Globe3DProps) {
+function GlobeInternal({ markers = [], config = {} }: Globe3DProps) {
   const globeRef = useRef<THREE.Group>(null);
   const globeInstance = useMemo(() => new ThreeGlobe(), []);
 
