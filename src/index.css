@@ -29,7 +29,7 @@
 @layer base {
   body {
     font-family: var(--font-family-sans);
-    @apply antialiased text-gray-900 bg-white;
+    @apply antialiased text-gray-100 bg-black;
     overflow-x: hidden;
   }
 }
