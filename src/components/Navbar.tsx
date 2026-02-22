@@ -34,7 +34,7 @@ export function Navbar() {
           </div>
         </div>
       </div>
-      {/* Mobile menu */}
+
       {isOpen && (
         <div className="md:hidden bg-black border-b border-white/10 px-4 pt-2 pb-4 space-y-2 shadow-lg">
           <a href="#" className="block px-3 py-2 rounded-md text-base font-medium text-gray-400 hover:text-blue-500 hover:bg-white/5">Services</a>

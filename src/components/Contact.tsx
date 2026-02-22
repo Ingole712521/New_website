@@ -8,7 +8,6 @@ export function Contact() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-20 items-start">
           
-          {/* Left Column: Info and Map */}
           <div>
             <div className="mb-12">
               <div className="w-12 h-12 bg-white/5 rounded-xl flex items-center justify-center mb-8 border border-white/10 shadow-lg shadow-blue-500/5">
@@ -28,31 +27,31 @@ export function Contact() {
               </div>
             </div>
 
-            {/* World Map Container */}
+
             <div className="relative mt-20 opacity-40 hover:opacity-70 transition-opacity duration-700">
               <img src={worldMap} alt="World Map" className="w-full h-auto grayscale" />
               
-              {/* Glowing Pin - Fine-tuned for Ahmedabad, India */}
+
               <div className="absolute top-[40.5%] left-[70.8%] -translate-x-1/2 -translate-y-1/2">
                 <div className="relative">
-                  {/* Pin Label */}
+
                   <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-3 whitespace-nowrap bg-white/10 backdrop-blur-md border border-white/10 px-3 py-1 rounded text-[10px] text-white font-bold uppercase tracking-wider">
                     We are here
                   </div>
-                  {/* Pin Dot */}
+
                   <div className="w-3 h-3 bg-blue-500 rounded-full shadow-[0_0_15px_rgba(59,130,246,0.8)] relative z-10"></div>
-                  {/* Glow Pulse */}
+
                   <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-8 h-8 bg-blue-500/30 rounded-full animate-ping"></div>
-                  {/* Vertical Line */}
+
                   <div className="absolute top-full left-1/2 -translate-x-1/2 w-[1px] h-12 bg-gradient-to-b from-blue-500 to-transparent"></div>
                 </div>
               </div>
             </div>
           </div>
 
-          {/* Right Column: Form */}
+
           <div className="relative group">
-            {/* Grid background effect */}
+
             <div className="absolute -inset-4 bg-gradient-to-r from-blue-500/5 to-purple-500/5 rounded-3xl blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-1000"></div>
             
             <div className="relative bg-[#0A0A0A]/80 border border-white/10 rounded-3xl p-8 md:p-12 shadow-2xl overflow-hidden group"
@@ -60,7 +59,7 @@ export function Contact() {
                    maskImage: 'linear-gradient(to bottom, black 0%, black 90%, transparent 100%)',
                    WebkitMaskImage: 'linear-gradient(to bottom, black 0%, black 90%, transparent 100%)'
                  }}>
-                {/* Consolidated Grid and Decorative Texture */}
+
                 <div className="absolute top-0 right-0 w-full h-[400px] pointer-events-none z-0"
                     style={{ 
                         maskImage: 'radial-gradient(circle at top right, black, transparent 75%)',

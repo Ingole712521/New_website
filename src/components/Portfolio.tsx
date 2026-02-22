@@ -2,7 +2,6 @@ import { useLayoutEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { Plus } from 'lucide-react';
 
-// Images
 import rupeshImg from '../assets/image/rupesh2.png';
 import raviImg from '../assets/image/ravi2.png';
 
@@ -21,7 +20,6 @@ function FounderCard({ name, role, image, bio }: FounderCardProps) {
 
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
-      // Set initial bio state
       gsap.set(bioRef.current, { opacity: 0, scale: 0.95, y: 10 });
       
       const tl = gsap.timeline({ paused: true });
@@ -66,13 +64,11 @@ function FounderCard({ name, role, image, bio }: FounderCardProps) {
       ref={cardRef} 
       className="relative group bg-black aspect-[3/4] overflow-hidden cursor-pointer border border-white/5"
     >
-      {/* Corner Markers */}
       <div className="absolute top-2 left-2 z-30 text-white/40"><Plus size={16} /></div>
       <div className="absolute top-2 right-2 z-30 text-white/40"><Plus size={16} /></div>
       <div className="absolute bottom-2 left-2 z-30 text-white/40"><Plus size={16} /></div>
       <div className="absolute bottom-2 right-2 z-30 text-white/40"><Plus size={16} /></div>
 
-      {/* Background Image */}
       <img 
         ref={imageRef}
         src={image} 
@@ -80,7 +76,6 @@ function FounderCard({ name, role, image, bio }: FounderCardProps) {
         className="w-full h-full object-cover object-top transition-transform duration-700"
       />
 
-      {/* Main Info (Visible by default) */}
       <div 
         ref={infoRef}
         className="absolute bottom-10 left-0 w-full text-center z-10 px-6"
@@ -89,7 +84,6 @@ function FounderCard({ name, role, image, bio }: FounderCardProps) {
         <h3 className="text-2xl font-bold text-white tracking-tight">{name}</h3>
       </div>
 
-      {/* Bio Reveal (Hover state) */}
       <div 
         ref={bioRef}
         className="absolute inset-0 flex items-center justify-center z-20 px-8 text-center bg-black/40 backdrop-blur-sm"
@@ -99,7 +93,6 @@ function FounderCard({ name, role, image, bio }: FounderCardProps) {
         </p>
       </div>
 
-      {/* Overlay Gradient */}
       <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80 group-hover:opacity-100 transition-opacity"></div>
     </div>
   );

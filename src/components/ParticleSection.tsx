@@ -60,9 +60,8 @@ export function ParticleSection() {
     const rows = Math.ceil(canvas.height / spacing);
     const cols = Math.ceil(canvas.width / spacing);
     
-    const colors = ['#3b82f6', '#06b6d4', '#6366f1']; // Blue, Cyan, Indigo
+    const colors = ['#3b82f6', '#06b6d4', '#6366f1'];
 
-    // Initialize particles
     particles = [];
     for (let i = 0; i < cols; i++) {
         for (let j = 0; j < rows; j++) {
@@ -106,7 +105,7 @@ export function ParticleSection() {
             const forceDirectionY = dy / distance;
             const maxDistance = 150;
             const force = (maxDistance - distance) / maxDistance;
-            const directionX = forceDirectionX * (isNaN(force) ? 0 : force) * 5; // Repulsion strength
+            const directionX = forceDirectionX * (isNaN(force) ? 0 : force) * 5;
             const directionY = forceDirectionY * (isNaN(force) ? 0 : force) * 5;
 
             if (distance < maxDistance) {
@@ -115,7 +114,7 @@ export function ParticleSection() {
             } else {
                 if (p.x !== p.originX) {
                     const dx = p.x - p.originX;
-                    p.vx -= dx * 0.1; // Return spring
+                    p.vx -= dx * 0.1;
                 }
                 if (p.y !== p.originY) {
                     const dy = p.y - p.originY;
@@ -123,7 +122,7 @@ export function ParticleSection() {
                 }
             }
 
-            p.vx *= 0.9; // Friction
+            p.vx *= 0.9;
             p.vy *= 0.9;
             p.x += p.vx;
             p.y += p.vy;

@@ -57,7 +57,7 @@ export function Footer() {
                 </div>
             </div>
 
-            {/* Large Background Text - Massive, centered, and bleeding off the sides for that premium look */}
+
             <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-screen pointer-events-none select-none overflow-hidden translate-y-[15%] flex justify-center">
                 <h2 className="text-[18vw] font-black text-white/[0.03] leading-none tracking-tighter uppercase whitespace-nowrap">
                     R Square

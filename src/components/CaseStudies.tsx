@@ -41,7 +41,7 @@ export function CaseStudies() {
           </div>
  
           <div className="space-y-24">
-            {/* Case 1 */}
+
             <div className="flex flex-col lg:flex-row items-center gap-16 case-study-item">
                  <div className="lg:w-1/2">
                     <div className="relative rounded-3xl overflow-hidden shadow-2xl group cursor-pointer border border-white/10">
@@ -81,8 +81,8 @@ export function CaseStudies() {
                 </div>
             </div>
  
-             {/* Case 2 */}
-            <div className="flex flex-col lg:flex-row-reverse items-center gap-16 case-study-item">
+
+             <div className="flex flex-col lg:flex-row-reverse items-center gap-16 case-study-item">
                  <div className="lg:w-1/2">
                     <div className="relative rounded-3xl overflow-hidden shadow-2xl group cursor-pointer border border-white/10">
                         <img 

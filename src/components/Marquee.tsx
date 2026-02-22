@@ -18,7 +18,6 @@ const bottomRowPhrases = [
 export function Marquee() {
   return (
     <div className="w-full overflow-hidden border-y border-white/5">
-      {/* Top Row - Orange, Scrolling Right to Left */}
       <div className="bg-[#FF8A3D] py-4 flex whitespace-nowrap overflow-hidden relative group">
         <div className="animate-marquee-left flex items-center space-x-12">
           {[...Array(6)].map((_, i) => (
@@ -34,7 +33,6 @@ export function Marquee() {
         </div>
       </div>
 
-      {/* Bottom Row - Black, Scrolling Left to Right */}
       <div className="bg-black py-4 flex whitespace-nowrap overflow-hidden relative group border-t border-white/10">
         <div className="animate-marquee-right flex items-center space-x-12">
           {[...Array(6)].map((_, i) => (

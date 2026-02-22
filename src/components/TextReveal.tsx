@@ -7,7 +7,6 @@ export function TextReveal() {
   const textRef = React.useRef<HTMLHeadingElement>(null);
   const text = "The creative transformation of the world is real and we are thriving in this complex yet competitive environment. Our creative brains and innovative eyes are the assets that help a brand knock on more doors and grab more engagement.";
   
-  // Split text into words for a smoother "one by one" reveal
   const words = text.split(" ");
 
   useLayoutEffect(() => {
@@ -38,8 +37,6 @@ export function TextReveal() {
         }
       );
 
-      // Separate pinning logic for stability - significantly reduced duration
-      // pinSpacing: false allows the next section to scroll OVER this one
       ScrollTrigger.create({
         trigger: containerRef.current,
         start: "top top",

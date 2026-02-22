@@ -9,12 +9,10 @@ export function Preloader({ onComplete }: { onComplete: () => void }) {
     const ctx = gsap.context(() => {
       const tl = gsap.timeline({
         onComplete: () => {
-          // Final delay before reveal
           gsap.delayedCall(0.5, onComplete);
         }
       });
 
-      // Percentage Counter Animation
       const proxy = { val: 0 };
       tl.to(proxy, {
         val: 100,
@@ -26,7 +24,6 @@ export function Preloader({ onComplete }: { onComplete: () => void }) {
         }
       });
 
-      // Exit Animation
       tl.to(containerRef.current, {
         y: "-100%",
         duration: 1.2,
@@ -39,27 +36,23 @@ export function Preloader({ onComplete }: { onComplete: () => void }) {
 
   return (
     <div ref={containerRef} className="fixed inset-0 bg-black z-[100] flex flex-col items-center justify-center overflow-hidden">
-      {/* Small top label */}
       <div className="absolute top-10 flex items-center space-x-2">
         <div className="w-2 h-2 bg-pink-500"></div>
         <span className="text-white text-[10px] uppercase tracking-[0.2em] font-medium">Delivering firsts</span>
       </div>
 
       <div className="relative flex items-center justify-center w-full h-full">
-        {/* Background Large Percentage - Outlined */}
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
           <span className="text-[30vw] md:text-[40vw] font-black text-transparent text-stroke-thick opacity-60 select-none">
             {percentage}%
           </span>
         </div>
 
-        {/* Foreground Hello */}
         <h1 className="text-7xl md:text-9xl font-bold text-white z-10 tracking-tighter">
           Hello
         </h1>
       </div>
 
-      {/* Progress Bar (Optional but matches the vibe) */}
       <div className="absolute bottom-0 left-0 w-full h-[1px] bg-white/10 overflow-hidden">
         <div 
           className="h-full bg-pink-500 transition-all duration-300 ease-out"

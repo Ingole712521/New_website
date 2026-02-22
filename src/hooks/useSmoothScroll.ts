@@ -6,27 +6,32 @@ import Lenis from 'lenis';
 export function useSmoothScroll() {
     React.useEffect(() => {
         const lenis = new Lenis({
-            duration: 1.2,
+            duration: 1.5,
             easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
             orientation: 'vertical',
             gestureOrientation: 'vertical',
             smoothWheel: true,
+            wheelMultiplier: 1,
+            touchMultiplier: 2,
+            infinite: false,
         });
 
-        // Synchronize Lenis scroll with GSAP's ScrollTrigger
         lenis.on('scroll', ScrollTrigger.update);
 
-        // Use GSAP's responsive ticker to drive Lenis animations
-        gsap.ticker.add((time) => {
+        function raf(time: number) {
             lenis.raf(time * 1000);
-        });
+        }
 
-        // Disable GSAP's default lag smoothing to prevent stutters
+        gsap.ticker.add(raf);
+
         gsap.ticker.lagSmoothing(0);
 
+        (window as any).lenis = lenis;
+
         return () => {
-            gsap.ticker.remove((time) => { lenis.raf(time * 1000) });
+            gsap.ticker.remove(raf);
             lenis.destroy();
+            delete (window as any).lenis;
         };
     }, []);
 }

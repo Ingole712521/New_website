@@ -7,7 +7,7 @@
   --color-brand-dark: #0a0a0a;
 }
 
-/* Global Scrollbar Hide */
+
 * {
   -ms-overflow-style: none;
   scrollbar-width: none;
@@ -27,9 +27,13 @@
 }
 
 @layer base {
+  html, body {
+    scroll-behavior: auto !important;
+    @apply bg-black;
+  }
   body {
     font-family: var(--font-family-sans);
-    @apply antialiased text-gray-100 bg-black;
+    @apply antialiased text-gray-100;
     overflow-x: hidden;
   }
 }

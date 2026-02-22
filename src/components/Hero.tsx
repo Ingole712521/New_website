@@ -66,10 +66,10 @@ export function Hero() {
              </div>
           </div>
           <div className="relative" ref={visualsRef}>
-            {/* Abstract 3D Visual Placeholder */}
+
             <div className="relative rounded-3xl overflow-hidden shadow-2xl bg-white/5 border border-white/10 aspect-square flex items-center justify-center group perspective-1000">
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(59,130,246,0.1),transparent_70%)]"></div>
-                {/* Simulated 3D Element */}
+
                 <div className="w-64 h-64 bg-gradient-to-tr from-blue-500 to-cyan-400 rounded-full blur-3xl opacity-20 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 animate-pulse"></div>
                  <img 
                   src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?auto=format&fit=crop&q=80&w=1000" 
@@ -77,7 +77,7 @@ export function Hero() {
                   className="relative z-10 w-[90%] h-[90%] object-cover rounded-2xl shadow-inner mix-blend-overlay opacity-60 transition-transform duration-700 group-hover:scale-105"
                  />
                  
-                 {/* Floating Cards */}
+
                  <div className="absolute top-10 left-10 bg-black/40 backdrop-blur-md p-3 rounded-xl border border-white/10 shadow-lg flex items-center gap-3 z-20 animate-bounce cursor-pointer hover:scale-105 transition-transform" style={{animationDuration: '3s'}}>
                     <div className="p-2 bg-blue-500/20 rounded-lg text-blue-400"><TrendingUp size={20}/></div>
                     <div>

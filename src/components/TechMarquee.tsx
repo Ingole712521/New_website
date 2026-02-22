@@ -24,7 +24,6 @@ const techItems = [
 export function TechMarquee() {
   return (
     <section className="py-32 bg-black overflow-hidden relative">
-      {/* Background Decorative Glows */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-blue-500/5 blur-[120px] rounded-full pointer-events-none" />
       <div className="absolute top-1/4 left-0 w-64 h-64 bg-purple-500/5 blur-[100px] rounded-full pointer-events-none" />
       
@@ -38,11 +37,9 @@ export function TechMarquee() {
       </div>
 
       <div className="relative flex flex-col gap-12 pointer-events-auto">
-        {/* Side Gradient Masks for that "Fade In/Out" look */}
         <div className="absolute inset-y-0 left-0 w-40 bg-gradient-to-r from-black to-transparent z-20 pointer-events-none" />
         <div className="absolute inset-y-0 right-0 w-40 bg-gradient-to-l from-black to-transparent z-20 pointer-events-none" />
 
-        {/* Row 1 - Direct */}
         <div className="flex overflow-hidden transform skew-y-1">
           <div className="flex animate-marquee gap-8 min-w-full">
             {[...techItems, ...techItems, ...techItems].map((item, idx) => (
@@ -64,7 +61,6 @@ export function TechMarquee() {
           </div>
         </div>
 
-        {/* Row 2 - Reverse */}
         <div className="flex overflow-hidden transform -skew-y-1">
           <div className="flex animate-marquee-reverse gap-8 min-w-full">
             {[...[...techItems].reverse(), ...techItems, ...techItems].map((item, idx) => (

@@ -23,7 +23,6 @@ export function Methodology() {
         </div>
 
         <BentoGrid className="max-w-7xl mx-auto md:auto-rows-[20rem]">
-          {/* Brand Development - md:col-span-2 */}
           <BentoGridItem
             title="Brand Development"
             description="Brand development is the process of strengthening your brand identity and helping you attain an edge over other competitors in the market."
@@ -32,7 +31,6 @@ export function Methodology() {
             icon={<Palette className="w-4 h-4 text-orange-500" />}
           />
           
-          {/* Print Identity - md:col-span-1 */}
           <BentoGridItem
             title="Print Identity"
             description="We create the print identity of your brand through colors, fonts, and design language that clearly establish a recall memory."
@@ -41,7 +39,6 @@ export function Methodology() {
             icon={<PenTool className="w-4 h-4 text-blue-500" />}
           />
 
-          {/* Digital Identity - md:col-span-1 */}
           <BentoGridItem
             title="Digital Identity"
             description="We turbocharge your brand and elevate your digital presence with our digital communication tools."
@@ -50,7 +47,6 @@ export function Methodology() {
             icon={<Share2 className="w-4 h-4 text-purple-500" />}
           />
 
-          {/* 3D Visualization - md:col-span-1 (The Globe) */}
           <BentoGridItem
             title="3D Visualization"
             description="Every business has a story to tell and we very well narrate your story to the world and bring your brand to the forefront."
@@ -59,7 +55,6 @@ export function Methodology() {
             icon={<Globe className="w-4 h-4 text-cyan-500" />}
           />
 
-          {/* Communication Strategy - md:col-span-1 */}
           <BentoGridItem
             title="Communication Strategy"
             description="Content is king and we strongly believe in communicating your brand through words that express who you are and what makes you different."
@@ -68,7 +63,6 @@ export function Methodology() {
             icon={<Monitor className="w-4 h-4 text-pink-500" />}
           />
 
-          {/* Content Writing - md:col-span-3 */}
           <BentoGridItem
             title="Content Writing"
             description="We write content that people can connect with. We provide crystal clear messaging in best way possible."

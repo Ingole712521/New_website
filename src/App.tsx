@@ -2,10 +2,9 @@ import React from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
-// Hooks
+
 import { useSmoothScroll } from './hooks/useSmoothScroll';
 
-// Components
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { Marquee } from './components/Marquee';
@@ -20,13 +19,13 @@ import { ParticleSection } from './components/ParticleSection';
 import { Footer } from './components/Footer';
 import { Preloader } from './components/Preloader';
 
-// Register GSAP plugins globally once
+
 gsap.registerPlugin(ScrollTrigger);
 
 function App() {
   const [isLoading, setIsLoading] = React.useState(true);
   
-  // Initialize smooth scrolling
+
   useSmoothScroll();
 
   return (
