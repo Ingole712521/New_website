@@ -19,11 +19,11 @@ export function Contact() {
               </p>
               
               <div className="mt-10 flex flex-wrap gap-x-8 gap-y-4 text-gray-400 text-sm font-medium">
-                <a href="mailto:contact@yoursaas.ai" className="hover:text-blue-500 transition-colors">contact@yoursaas.ai</a>
+                <a href="mailto:contact@rsquare.ai" className="hover:text-blue-500 transition-colors">contact@rsquare.ai</a>
                 <span className="text-white/10 hidden sm:inline">•</span>
                 <span>+1 (800) 123 XX21</span>
                 <span className="text-white/10 hidden sm:inline">•</span>
-                <a href="mailto:support@yoursaas.ai" className="hover:text-blue-500 transition-colors">support@yoursaas.ai</a>
+                <a href="mailto:support@rsquare.ai" className="hover:text-blue-500 transition-colors">support@rsquare.ai</a>
               </div>
             </div>
 
