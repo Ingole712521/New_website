@@ -115,9 +115,6 @@ export function Portfolio() {
 My journey is defined by a commitment to continuous learning and a drive to provide the best possible visual solutions for the industry.`
     }
   ];
-  return founders;
-
-}
 
   return (
     <section className="py-32 bg-black border-t border-white/5 overflow-hidden" id="portfolio">
