@@ -104,7 +104,8 @@ export function Portfolio() {
       name: "Rupesh",
       role: "Founder",
       image: rupeshImg,
-    bio : "Proficient in Adobe Photoshop and 2D illustration, I create effective designs for social media, marketing communication, and creative campaigns. I am detail-oriented, adaptable, and committed to continuous learning, with the goal of delivering professional visual solutions that support business and marketing objectives."
+    bio : "I am a Graphic Designer with a Bachelor’s degree in Fine Arts, specializing in Illustration and Creative Design. I have experience in developing high-quality visual content for both digital and print platforms, with a strong focus on clarity, consistency, and brand alignment."
+"Proficient in Adobe Photoshop and 2D illustration, I create effective designs for social media, marketing communication, and creative campaigns. I am detail-oriented, adaptable, and committed to continuous learning, with the goal of delivering professional visual solutions that support business and marketing objectives."
     },
     {
       name: "Ravi",
