@@ -35,7 +35,7 @@ export function Contact() {
               <div className="absolute top-[40.5%] left-[70.8%] -translate-x-1/2 -translate-y-1/2">
                 <div className="relative">
 
-                  <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-3 whitespace-nowrap bg-white/10 backdrop-blur-md border border-white/10 px-3 py-1 rounded text-[10px] text-white font-bold uppercase tracking-wider">
+                  <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-3 whitespace-nowrap bg-white/10 backdrop-blur-md border border-white/10 px-3 py-1 rounded text-[10px] text-black font-bold uppercase tracking-wider">
                     We are here
                   </div>
 
