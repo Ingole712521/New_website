@@ -104,7 +104,7 @@ export function Portfolio() {
       name: "Rupesh",
       role: "Founder",
       image: rupeshImg,
-      bio: "As a designer with a background in Information Technology, I blend technical logic with creative storytelling to build impactful marketing websites. Since starting my design career in December 2022, I have specialized in creating both high-conversion digital content and precise print materials. My journey is defined by a commitment to continuous learning and a drive to provide the best possible visual solutions for the industry."
+    bio : "Proficient in Adobe Photoshop and 2D illustration, I create effective designs for social media, marketing communication, and creative campaigns. I am detail-oriented, adaptable, and committed to continuous learning, with the goal of delivering professional visual solutions that support business and marketing objectives."
     },
     {
       name: "Ravi",
