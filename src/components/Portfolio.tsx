@@ -104,16 +104,22 @@ export function Portfolio() {
       name: "Rupesh",
       role: "Founder",
       image: rupeshImg,
-    bio : "I am a Graphic Designer with a Bachelor’s degree in Fine Arts, specializing in Illustration and Creative Design. I have experience in developing high-quality visual content for both digital and print platforms, with a strong focus on clarity, consistency, and brand alignment."
-"Proficient in Adobe Photoshop and 2D illustration, I create effective designs for social media, marketing communication, and creative campaigns. I am detail-oriented, adaptable, and committed to continuous learning, with the goal of delivering professional visual solutions that support business and marketing objectives."
+      bio: `I am a Graphic Designer with a Bachelor’s degree in Fine Arts, specializing in Illustration and Creative Design. I have experience in developing high-quality visual content for both digital and print platforms, with a strong focus on clarity, consistency, and brand alignment.
+
+Proficient in Adobe Photoshop and 2D illustration, I create effective designs for social media, marketing communication, and creative campaigns. I am detail-oriented, adaptable, and committed to continuous learning, with the goal of delivering professional visual solutions that support business and marketing objectives.`
     },
     {
       name: "Ravi",
       role: "Founder",
       image: raviImg,
-      bio: "As a designer with a background in Information Technology, I blend technical logic with creative storytelling to build impactful marketing websites. Since starting my design career in December 2022, I have specialized in creating both high-conversion digital content and precise print materials. My journey is defined by a commitment to continuous learning and a drive to provide the best possible visual solutions for the industry."
+      bio: `As a designer with a background in Information Technology, I blend technical logic with creative storytelling to build impactful marketing websites. Since starting my design career in December 2022, I have specialized in creating high-conversion digital content and precise print materials.
+
+My journey is defined by a commitment to continuous learning and a drive to provide the best possible visual solutions for the industry.`
     }
   ];
+
+  return founders;
+}
 
   return (
     <section className="py-32 bg-black border-t border-white/5 overflow-hidden" id="portfolio">
