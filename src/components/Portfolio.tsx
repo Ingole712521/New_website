@@ -104,9 +104,7 @@ export function Portfolio() {
       name: "Rupesh",
       role: "Founder",
       image: rupeshImg,
-      bio: `I am a Graphic Designer with a Bachelor’s degree in Fine Arts, specializing in Illustration and Creative Design. I have experience in developing high-quality visual content for both digital and print platforms, with a strong focus on clarity, consistency, and brand alignment.
-
-Proficient in Adobe Photoshop and 2D illustration, I create effective designs for social media, marketing communication, and creative campaigns. I am detail-oriented, adaptable, and committed to continuous learning, with the goal of delivering professional visual solutions that support business and marketing objectives.`
+      bio: `As a Graphic Designer and Fine Arts graduate specializing in Illustration, I bridge the gap between artistic storytelling and strategic brand communication. With extensive experience in digital and print platforms, my work centers on clarity, consistency, and precise brand alignment. I leverage deep proficiency in Adobe Photoshop and 2D illustration to transform complex marketing objectives into compelling visual assets for social media and creative campaigns. Beyond technical execution, I am a detail-oriented problem solver committed to continuous growth. My goal is to deliver sophisticated, professional visual solutions that elevate brand identity and drive tangible business results in a competitive market.`
     },
     {
       name: "Ravi",
