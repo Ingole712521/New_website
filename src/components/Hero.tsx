@@ -1,6 +1,7 @@
 import React, { useLayoutEffect } from 'react';
 import { ArrowRight, Play, TrendingUp, Database } from 'lucide-react';
 import gsap from 'gsap';
+import { BackgroundBeams } from './background';
 
 export function Hero() {
   const contentRef = React.useRef(null);
@@ -28,6 +29,7 @@ export function Hero() {
 
   return (
     <div id="about" className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden section-hero bg-black">
+      <BackgroundBeams className="opacity-40" />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div ref={contentRef}>

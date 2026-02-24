@@ -87,7 +87,7 @@ export function TechMarquee() {
               <div
                 key={idx}
                 className={cn(
-                  "group flex items-center gap-5 bg-white/[0.03] border border-white/10 px-10 py-5 rounded-2xl backdrop-blur-md transition-all duration-500 hover:bg-white/[0.08] hover:scale-105 hover:border-white/20 min-w-[240px] cursor-help shadow-2xl",
+                  "group flex items-center gap-5 bg-white/[0.03] border border-white/10 px-10 py-5 rounded-2xl backdrop-blur-md transition-all duration-500 hover:bg-white/[0.08] hover:scale-105 hover:border-white/20 min-w-[240px] shadow-2xl",
                   item.glow
                 )}
               >
@@ -108,7 +108,7 @@ export function TechMarquee() {
               <div
                 key={idx}
                 className={cn(
-                  "group flex items-center gap-5 bg-white/[0.03] border border-white/10 px-10 py-5 rounded-2xl backdrop-blur-md transition-all duration-500 hover:bg-white/[0.08] hover:scale-105 hover:border-white/20 min-w-[240px] cursor-help shadow-2xl",
+                  "group flex items-center gap-5 bg-white/[0.03] border border-white/10 px-10 py-5 rounded-2xl backdrop-blur-md transition-all duration-500 hover:bg-white/[0.08] hover:scale-105 hover:border-white/20 min-w-[240px]  shadow-2xl",
                   item.glow
                 )}
               >
