@@ -1,18 +1,21 @@
 
 const topRowPhrases = [
-  "Delivering outstanding services",
-  "The more eyes, the better the brand",
-  "Divided by Expertise, United by Outcomes",
-  "Together we move mountains",
-  "Say hello to our team"
+  "	Designing brands that get noticed",
+  "Where creativity meets strategy",
+  "Ideas crafted to grow your brand",
+  "Design that connects, marketing that converts",
+  "Turning visions into visual impact"
 ];
 
 const bottomRowPhrases = [
-  "Cultivating great minds",
-  "Divided by Expertise, United by Outcomes",
-  "Nurturing creative space",
-  "A thriving & sustainable workplace",
-  "Innovating pixel by pixel"
+  "Creative solutions for modern brands",
+  "Smart design for bold businesses",
+  "Building brands people remember",
+  "From concept to conversion",
+  "Shaping brands with purpose and style",
+
+
+
 ];
 
 export function Marquee() {
