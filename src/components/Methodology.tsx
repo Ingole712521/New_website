@@ -6,7 +6,7 @@ import { Palette, PenTool, Share2, Monitor, Globe, Type } from 'lucide-react';
 const markers = [
   { lat: 12.9716, lng: 77.5946, src: "", label: "Bangalore" },
   { lat: 23.0225, lng: 72.5714, src: "", label: "Ahmedabad" },
-  { lat: 40.7128, lng: -74.006, src: "", label: "New York" },
+  { lat: 40.7128, lng: -74.006, src: "", label: "New York " },
   { lat: 51.5074, lng: -0.1278, src: "", label: "London" },
 ];
 
@@ -77,8 +77,8 @@ export function Methodology() {
               onMouseEnter={() => setHoveredIndex(i)}
               onMouseLeave={() => setHoveredIndex(null)}
               className={`transition-all duration-300 ${item.className} ${hoveredIndex !== null && hoveredIndex !== i
-                  ? "blur-[2px] opacity-30 grayscale scale-[0.98]"
-                  : ""
+                ? "blur-[2px] opacity-30 grayscale scale-[0.98]"
+                : ""
                 }`}
             >
               <BentoGridItem
