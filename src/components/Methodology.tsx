@@ -70,8 +70,8 @@ export function Methodology() {
               onMouseEnter={() => setHoveredIndex(i)}
               onMouseLeave={() => setHoveredIndex(null)}
               className={`transition-all duration-300 ${item.className} ${hoveredIndex !== null && hoveredIndex !== i
-                  ? "blur-[2px] opacity-30 grayscale scale-[0.98]"
-                  : ""
+                ? "blur-[2px] opacity-30 grayscale scale-[0.98]"
+                : ""
                 }`}
             >
               <BentoGridItem
