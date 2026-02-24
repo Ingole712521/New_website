@@ -1,14 +1,7 @@
 import { useState } from 'react';
 import { BentoGrid, BentoGridItem } from './ui/bento-grid';
-import { Globe3D } from './ui/3d-globe';
 import { Palette, PenTool, Share2, Monitor, Globe, Type } from 'lucide-react';
-
-const markers = [
-  { lat: 12.9716, lng: 77.5946, src: "", label: "Bangalore" },
-  { lat: 23.0225, lng: 72.5714, src: "", label: "Ahmedabad" },
-  { lat: 40.7128, lng: -74.006, src: "", label: "New York " },
-  { lat: 51.5074, lng: -0.1278, src: "", label: "London" },
-];
+import { CobeGlobe } from './ui/cobe-globe';
 
 export function Methodology() {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
@@ -59,7 +52,7 @@ export function Methodology() {
   ];
 
   return (
-    <section className="relative z-10 mt-[20vh] py-24 bg-[#0a0a0a] overflow-hidden shadow-[0_-20px_50px_rgba(0,0,0,0.8)]">
+    <section id="services" className="relative z-10 mt-[20vh] py-24 bg-[#0a0a0a] overflow-hidden shadow-[0_-20px_50px_rgba(0,0,0,0.8)]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-5xl font-bold text-white mb-4 tracking-tight uppercase">
@@ -77,8 +70,8 @@ export function Methodology() {
               onMouseEnter={() => setHoveredIndex(i)}
               onMouseLeave={() => setHoveredIndex(null)}
               className={`transition-all duration-300 ${item.className} ${hoveredIndex !== null && hoveredIndex !== i
-                ? "blur-[2px] opacity-30 grayscale scale-[0.98]"
-                : ""
+                  ? "blur-[2px] opacity-30 grayscale scale-[0.98]"
+                  : ""
                 }`}
             >
               <BentoGridItem
@@ -143,14 +136,7 @@ const GlobeHeader = () => (
   <div className="flex flex-1 w-full h-full min-h-[6rem] rounded-xl bg-[#030303] overflow-hidden relative group/skeleton">
     <div className="absolute inset-0 z-10 pointer-events-none bg-gradient-to-t from-black via-transparent to-transparent opacity-60" />
     <div className="w-full h-full transform group-hover/skeleton:scale-105 transition-transform duration-1000">
-      <Globe3D
-        markers={markers}
-        config={{
-          atmosphereColor: "#4da6ff",
-          atmosphereIntensity: 15,
-          autoRotateSpeed: 0.1,
-        }}
-      />
+      <CobeGlobe />
     </div>
   </div>
 );
