@@ -75,6 +75,20 @@ export function Marquee() {
         .marquee-right:hover {
           animation-play-state: paused;
         }
+
+        /* Add to your global CSS */
+.marquee-left, .marquee-right {
+  transform: translateZ(0); /* Force GPU acceleration */
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+/* Alternative: Use CSS custom properties for better performance */
+@property --scroll-position {
+  syntax: '<number>';
+  inherits: false;
+  initial-value: 0;
+}
       `}</style>
     </div>
   );
