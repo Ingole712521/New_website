@@ -23,27 +23,27 @@ function FounderCard({ name, role, image, bio }: FounderCardProps) {
       gsap.set(bioRef.current, { opacity: 0, scale: 0.95, y: 10 });
       
       const tl = gsap.timeline({ paused: true });
-      
-      tl.to(imageRef.current, { 
-        scale: 1.1, 
-        filter: "blur(5px)", 
+
+      tl.to(imageRef.current, {
+        scale: 1.1,
+        filter: "blur(5px)",
         opacity: 0.3,
-        duration: 0.5, 
-        ease: "power2.out" 
-      })
-      .to(infoRef.current, {
-        y: -10,
-        opacity: 0,
-        duration: 0.3,
-        ease: "power2.in"
-      }, 0)
-      .to(bioRef.current, {
-        opacity: 1,
-        scale: 1,
-        y: 0,
         duration: 0.5,
-        ease: "back.out(1.7)"
-      }, 0.1);
+        ease: "power2.out"
+      })
+        .to(infoRef.current, {
+          y: -10,
+          opacity: 0,
+          duration: 0.3,
+          ease: "power2.in"
+        }, 0)
+        .to(bioRef.current, {
+          opacity: 1,
+          scale: 1,
+          y: 0,
+          duration: 0.5,
+          ease: "back.out(1.7)"
+        }, 0.1);
 
       const onMouseEnter = () => tl.play();
       const onMouseLeave = () => tl.reverse();
@@ -60,8 +60,8 @@ function FounderCard({ name, role, image, bio }: FounderCardProps) {
   }, []);
 
   return (
-    <div 
-      ref={cardRef} 
+    <div
+      ref={cardRef}
       className="relative group bg-black aspect-[3/4] overflow-hidden cursor-pointer border border-white/5"
     >
       <div className="absolute top-2 left-2 z-30 text-white/40"><Plus size={16} /></div>
@@ -69,14 +69,14 @@ function FounderCard({ name, role, image, bio }: FounderCardProps) {
       <div className="absolute bottom-2 left-2 z-30 text-white/40"><Plus size={16} /></div>
       <div className="absolute bottom-2 right-2 z-30 text-white/40"><Plus size={16} /></div>
 
-      <img 
+      <img
         ref={imageRef}
-        src={image} 
-        alt={name} 
+        src={image}
+        alt={name}
         className="w-full h-full object-cover object-top transition-transform duration-700"
       />
 
-      <div 
+      <div
         ref={infoRef}
         className="absolute bottom-10 left-0 w-full text-center z-10 px-6"
       >
@@ -84,7 +84,7 @@ function FounderCard({ name, role, image, bio }: FounderCardProps) {
         <h3 className="text-2xl font-bold text-white tracking-tight">{name}</h3>
       </div>
 
-      <div 
+      <div
         ref={bioRef}
         className="absolute inset-0 flex items-center justify-center z-20 px-8 text-center bg-black/40 backdrop-blur-sm"
       >

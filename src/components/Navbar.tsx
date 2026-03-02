@@ -53,7 +53,7 @@ export function Navbar() {
               onClick={(e: any) => scrollToSection(e, '#contact')}
               className="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2.5 rounded-full font-medium transition-all shadow-lg shadow-blue-500/30 hover:shadow-blue-500/50 hover:-translate-y-0.5"
             >
-              Book a Consultation
+              Hire me
             </button>
           </div>
           <div className="md:hidden">
@@ -80,7 +80,7 @@ export function Navbar() {
             onClick={(e: any) => scrollToSection(e, '#contact')}
             className="w-full mt-4 bg-blue-600 text-white px-5 py-3 rounded-full font-medium shadow-md"
           >
-            Book a Consultation
+            Hire me
           </button>
         </div>
       )}

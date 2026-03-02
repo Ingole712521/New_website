@@ -48,13 +48,13 @@ export function Preloader({ onComplete }: { onComplete: () => void }) {
           </span>
         </div>
 
-        <h1 className="text-7xl md:text-9xl font-bold text-white z-10 tracking-tighter">
+        {/* <h1 className="text-7xl md:text-9xl font-bold text-white z-10 tracking-tighter">
           Hello
-        </h1>
+        </h1> */}
       </div>
 
       <div className="absolute bottom-0 left-0 w-full h-[1px] bg-white/10 overflow-hidden">
-        <div 
+        <div
           className="h-full bg-pink-500 transition-all duration-300 ease-out"
           style={{ width: `${percentage}%` }}
         ></div>
