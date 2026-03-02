@@ -5,7 +5,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 export function TextReveal() {
   const containerRef = React.useRef<HTMLDivElement>(null);
   const textRef = React.useRef<HTMLHeadingElement>(null);
-  const text = "The creative transformation of the world is real and we are thriving in this complex yet competitive environment. Our creative brains and innovative eyes are the assets that help a brand knock on more doors and grab more engagement.";
+  const text = "Welcome to R Square Visuals, where creative vision meets technical precision. Founded by Rupesh and Ravi, our agency was built on the idea of providing a seamless, all-in-one platform for high-end design and marketing services.";
   
   const words = text.split(" ");
 
