@@ -1,8 +1,6 @@
 import {
-
   SiUnity,
   SiFlutter,
-  SiAdobe,
   SiThreedotjs,
   SiBlender,
   SiFigma,
@@ -29,12 +27,6 @@ const techItems = [
     icon: <SiFlutter className="text-cyan-400 text-3xl" />,
     color: "text-cyan-400",
     glow: "group-hover:shadow-cyan-400/20"
-  },
-  {
-    name: "Adobe",
-    icon: <SiAdobe className="text-red-500 text-3xl" />,
-    color: "text-red-500",
-    glow: "group-hover:shadow-red-500/20"
   },
   {
     name: "Three.js",
