@@ -16,7 +16,7 @@ const bottomRowPhrases = [
 
 export function Marquee() {
   return (
-    <div className="w-full overflow-hidden border-y border-white/5">
+    <div className="relative z-10 w-full overflow-hidden border-y border-white/5 bg-black">
       {/* Top Row */}
       <div className="bg-[#FF8A3D] py-4 overflow-hidden relative">
         <div className="marquee-left flex items-center gap-12">

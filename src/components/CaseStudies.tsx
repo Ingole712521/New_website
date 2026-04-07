@@ -44,7 +44,7 @@ export function CaseStudies() {
             document.body.style.overflow = prev;
         };
     }, [lightbox, closeLightbox]);
-
+    
     useLayoutEffect(() => {
         const ctx = gsap.context(() => {
             gsap.from('.case-title', {
