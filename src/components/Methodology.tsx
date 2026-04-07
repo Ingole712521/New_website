@@ -52,7 +52,10 @@ export function Methodology() {
   ];
 
   return (
-    <section id="services" className="relative z-10 mt-[20vh] py-24 bg-[#0a0a0a] overflow-hidden shadow-[0_-20px_50px_rgba(0,0,0,0.8)]">
+    <section
+      id="services"
+      className="relative z-20 mt-0 py-24 bg-[#0a0a0a] overflow-hidden shadow-[0_-20px_50px_rgba(0,0,0,0.8)]"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-5xl font-bold text-white mb-4 tracking-tight uppercase">
