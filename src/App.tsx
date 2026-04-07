@@ -10,7 +10,7 @@ import { Hero } from './components/Hero';
 import { Marquee } from './components/Marquee';
 import { TextReveal } from './components/TextReveal';
 import { Methodology } from './components/Methodology';
-import { Stats } from './components/Stats';
+// import { Stats } from './components/Stats';
 import { CaseStudies } from './components/CaseStudies';
 import { TechMarquee } from './components/TechMarquee';
 import { Portfolio } from './components/Portfolio';
@@ -37,7 +37,7 @@ function App() {
         <Marquee />
         <TextReveal />
         <Methodology />
-        <Stats />
+        {/* <Stats /> */}
         <CaseStudies />
         <TechMarquee />
         <Portfolio />
