@@ -109,36 +109,42 @@ export function CaseStudies() {
                                 <p className="text-sm text-gray-500">Campaign and promotional email designs</p>
                             </div>
                         </div>
-                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                            {MAILER.map(({ file, title }) => {
-                                const src = assetUrl('mailer', file);
-                                return (
-                                    <button
-                                        key={file}
-                                        type="button"
-                                        onClick={() => setLightbox({ src, title })}
-                                        className="project-card group text-left rounded-2xl overflow-hidden border border-white/10 bg-white/[0.02] hover:border-white/20 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500/60"
-                                    >
-                                        <div className="relative aspect-[4/3] overflow-hidden bg-white/5">
-                                            <img
-                                                src={src}
-                                                alt={title}
-                                                className="w-full h-full object-cover object-top transform group-hover:scale-[1.03] transition-transform duration-500"
-                                                loading="lazy"
-                                            />
-                                            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-90 group-hover:opacity-95 transition-opacity" />
-                                            <div className="absolute bottom-0 left-0 right-0 p-4">
-                                                <span className="text-[10px] font-semibold uppercase tracking-wider text-blue-300/90 mb-1 block">
-                                                    Mailer
-                                                </span>
-                                                <span className="text-white font-semibold leading-snug line-clamp-2">
-                                                    {title}
-                                                </span>
-                                            </div>
-                                        </div>
-                                    </button>
-                                );
-                            })}
+                        <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-white/[0.02]">
+                            <div className="pointer-events-none absolute inset-y-0 left-0 w-20 bg-gradient-to-r from-black to-transparent z-10" />
+                            <div className="pointer-events-none absolute inset-y-0 right-0 w-20 bg-gradient-to-l from-black to-transparent z-10" />
+                            <div className="project-slider group/slider py-6">
+                                <div className="project-track project-track-left">
+                                    {[...MAILER, ...MAILER].map(({ file, title }, idx) => {
+                                        const src = assetUrl('mailer', file);
+                                        return (
+                                            <button
+                                                key={`${file}-${idx}`}
+                                                type="button"
+                                                onClick={() => setLightbox({ src, title })}
+                                                className="project-card mx-3 w-[260px] sm:w-[300px] lg:w-[340px] shrink-0 group text-left rounded-2xl overflow-hidden border border-white/10 bg-black/20 hover:border-white/20 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500/60"
+                                            >
+                                                <div className="relative aspect-[4/3] overflow-hidden bg-white/5">
+                                                    <img
+                                                        src={src}
+                                                        alt={title}
+                                                        className="w-full h-full object-cover object-top transform group-hover:scale-[1.03] transition-transform duration-500"
+                                                        loading="lazy"
+                                                    />
+                                                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-90 group-hover:opacity-95 transition-opacity" />
+                                                    <div className="absolute bottom-0 left-0 right-0 p-4">
+                                                        <span className="text-[10px] font-semibold uppercase tracking-wider text-blue-300/90 mb-1 block">
+                                                            Mailer
+                                                        </span>
+                                                        <span className="text-white font-semibold leading-snug line-clamp-2">
+                                                            {title}
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </button>
+                                        );
+                                    })}
+                                </div>
+                            </div>
                         </div>
                     </section>
 
@@ -152,40 +158,87 @@ export function CaseStudies() {
                                 <p className="text-sm text-gray-500">Sports league graphics and visual design</p>
                             </div>
                         </div>
-                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                            {UI_CREATIVE.map(({ file, title }) => {
-                                const src = assetUrl('ui-creative', file);
-                                return (
-                                    <button
-                                        key={file}
-                                        type="button"
-                                        onClick={() => setLightbox({ src, title })}
-                                        className="project-card group text-left rounded-2xl overflow-hidden border border-white/10 bg-white/[0.02] hover:border-white/20 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-violet-500/60"
-                                    >
-                                        <div className="relative aspect-[4/3] overflow-hidden bg-white/5">
-                                            <img
-                                                src={src}
-                                                alt={title}
-                                                className="w-full h-full object-cover object-top transform group-hover:scale-[1.03] transition-transform duration-500"
-                                                loading="lazy"
-                                            />
-                                            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-90 group-hover:opacity-95 transition-opacity" />
-                                            <div className="absolute bottom-0 left-0 right-0 p-4">
-                                                <span className="text-[10px] font-semibold uppercase tracking-wider text-violet-300/90 mb-1 block">
-                                                    UI creative
-                                                </span>
-                                                <span className="text-white font-semibold leading-snug line-clamp-2">
-                                                    {title}
-                                                </span>
-                                            </div>
-                                        </div>
-                                    </button>
-                                );
-                            })}
+                        <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-white/[0.02]">
+                            <div className="pointer-events-none absolute inset-y-0 left-0 w-20 bg-gradient-to-r from-black to-transparent z-10" />
+                            <div className="pointer-events-none absolute inset-y-0 right-0 w-20 bg-gradient-to-l from-black to-transparent z-10" />
+                            <div className="project-slider group/slider py-6">
+                                <div className="project-track project-track-right">
+                                    {[...UI_CREATIVE, ...UI_CREATIVE].map(({ file, title }, idx) => {
+                                        const src = assetUrl('ui-creative', file);
+                                        return (
+                                            <button
+                                                key={`${file}-${idx}`}
+                                                type="button"
+                                                onClick={() => setLightbox({ src, title })}
+                                                className="project-card mx-3 w-[260px] sm:w-[300px] lg:w-[340px] shrink-0 group text-left rounded-2xl overflow-hidden border border-white/10 bg-black/20 hover:border-white/20 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-violet-500/60"
+                                            >
+                                                <div className="relative aspect-[4/3] overflow-hidden bg-white/5">
+                                                    <img
+                                                        src={src}
+                                                        alt={title}
+                                                        className="w-full h-full object-cover object-top transform group-hover:scale-[1.03] transition-transform duration-500"
+                                                        loading="lazy"
+                                                    />
+                                                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-90 group-hover:opacity-95 transition-opacity" />
+                                                    <div className="absolute bottom-0 left-0 right-0 p-4">
+                                                        <span className="text-[10px] font-semibold uppercase tracking-wider text-violet-300/90 mb-1 block">
+                                                            UI creative
+                                                        </span>
+                                                        <span className="text-white font-semibold leading-snug line-clamp-2">
+                                                            {title}
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </button>
+                                        );
+                                    })}
+                                </div>
+                            </div>
                         </div>
                     </section>
                 </div>
             </div>
+
+            <style>{`
+                .project-track {
+                    display: flex;
+                    align-items: stretch;
+                    width: max-content;
+                    will-change: transform;
+                }
+
+                /* Infinite marquee by translating half the duplicated content width */
+                .project-track-left {
+                    animation: project-scroll-left 28s linear infinite;
+                }
+                .project-track-right {
+                    animation: project-scroll-right 32s linear infinite;
+                }
+
+                /* Pause when user hovers any card inside */
+                .project-slider:hover .project-track-left,
+                .project-slider:hover .project-track-right,
+                .project-card:hover ~ .project-track-left,
+                .project-card:hover ~ .project-track-right {
+                    animation-play-state: paused;
+                }
+
+                @keyframes project-scroll-left {
+                    0% { transform: translateX(0); }
+                    100% { transform: translateX(-50%); }
+                }
+                @keyframes project-scroll-right {
+                    0% { transform: translateX(-50%); }
+                    100% { transform: translateX(0); }
+                }
+
+                @media (prefers-reduced-motion: reduce) {
+                    .project-track-left,
+                    .project-track-right {
+                        animation: none;
+                    }
+                }
+            `}</style>
 
             {lightbox && (
                 <div
