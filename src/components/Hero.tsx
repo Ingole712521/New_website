@@ -1,5 +1,4 @@
 import React, { useLayoutEffect } from 'react';
-import { ArrowRight } from 'lucide-react';
 import gsap from 'gsap';
 import { BackgroundBeams } from './background';
 
