@@ -1,3 +1,114 @@
+import { Megaphone, Monitor, PenTool, ShieldCheck } from 'lucide-react';
+
+export function Methodology() {
+  const services = [
+    {
+      title: 'Brand Development',
+      icon: <ShieldCheck className="w-5 h-5 text-orange-400" />,
+      items: ['Brand logo', 'Brand Strategy', 'Brand manual', 'Market research'],
+      accent: 'from-orange-500/25 via-orange-500/10 to-transparent',
+    },
+    {
+      title: 'Print Branding',
+      icon: <PenTool className="w-5 h-5 text-blue-400" />,
+      items: [
+        'Outdoor branding',
+        'Corporate Branding',
+        'Magazine & newspaper advertisement',
+        'Retail branding',
+        'Packaging',
+      ],
+      accent: 'from-blue-500/25 via-blue-500/10 to-transparent',
+    },
+    {
+      title: 'Digital Identity',
+      icon: <Monitor className="w-5 h-5 text-purple-400" />,
+      items: ['Social media handling'],
+      accent: 'from-purple-500/25 via-purple-500/10 to-transparent',
+    },
+    {
+      title: 'Communication strategy',
+      icon: <Megaphone className="w-5 h-5 text-pink-400" />,
+      items: ['Copywriting', 'Content writing'],
+      accent: 'from-pink-500/25 via-pink-500/10 to-transparent',
+    },
+  ] as const;
+
+  return (
+    <section
+      id="services"
+      className="relative z-20 mt-0 py-24 bg-brand-dark overflow-hidden shadow-[0_-20px_50px_rgba(0,0,0,0.8)]"
+    >
+      {/* Ambient glow */}
+      <div className="pointer-events-none absolute -top-24 left-1/2 h-[420px] w-[720px] -translate-x-1/2 rounded-full bg-blue-500/10 blur-[120px]" />
+      <div className="pointer-events-none absolute -bottom-24 left-10 h-[360px] w-[360px] rounded-full bg-purple-500/10 blur-[110px]" />
+      <div className="pointer-events-none absolute top-24 right-0 h-[380px] w-[380px] rounded-full bg-pink-500/10 blur-[120px]" />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="text-center mb-14">
+          <p className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 text-gray-200/90 text-xs font-semibold tracking-widest uppercase">
+            Our capabilities
+          </p>
+          <h2 className="mt-5 text-3xl md:text-6xl font-extrabold text-white tracking-tight uppercase">
+            Key services{' '}
+            <span className="text-transparent bg-clip-text bg-size-[180%_180%] bg-position-[40%_45%] bg-[linear-gradient(125deg,#60a5fa_0%,#a78bfa_45%,#fb7185_100%)]">
+              provided
+            </span>
+          </h2>
+          <p className="mt-4 text-gray-400 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">
+            Everything you need to build a consistent brand—online and offline.
+          </p>
+        </div>
+
+        <div className="relative rounded-3xl border border-white/10 bg-white/2 overflow-hidden shadow-2xl shadow-black/35">
+          {/* Cross border lines */}
+          <div className="pointer-events-none absolute inset-0">
+            <div className="hidden md:block absolute inset-y-8 left-1/2 w-px bg-white/10" />
+            <div className="hidden md:block absolute inset-x-8 top-1/2 h-px bg-white/10" />
+            <div className="absolute inset-0 bg-[radial-gradient(80%_60%_at_50%_0%,rgba(255,255,255,0.06),transparent_70%)]" />
+          </div>
+
+          <div className="grid md:grid-cols-2">
+            {services.map((svc) => (
+              <div
+                key={svc.title}
+                className="group relative p-8 sm:p-10 border-b border-white/10 md:border-b-0 md:nth-1:border-r md:nth-3:border-r md:nth-1:border-b md:nth-2:border-b transition-colors hover:bg-white/3"
+              >
+                <div className={`absolute inset-0 bg-linear-to-br ${svc.accent} opacity-70`} />
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-[radial-gradient(60%_50%_at_30%_0%,rgba(255,255,255,0.10),transparent_55%)]" />
+
+                <div className="relative">
+                  <div className="flex items-center gap-3 mb-5">
+                    <div className="w-11 h-11 rounded-2xl bg-white/6 border border-white/12 flex items-center justify-center shadow-lg shadow-black/30 ring-1 ring-white/10 group-hover:scale-[1.03] group-hover:border-white/20 transition-all">
+                      {svc.icon}
+                    </div>
+                    <h3 className="text-xl sm:text-2xl font-bold text-white tracking-tight">
+                      {svc.title}
+                    </h3>
+                  </div>
+
+                  <ul className="space-y-2.5 text-gray-200/90">
+                    {svc.items.map((it) => (
+                      <li key={it} className="flex items-start gap-3">
+                        <span className="mt-2 h-2 w-2 rounded-full bg-white/35 shrink-0 ring-2 ring-white/10" />
+                        <span className="leading-relaxed tracking-[0.01em]">{it}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* -------------------------------------------------------------------------- */
+/* Previous animated BentoGrid version (commented out per request)             */
+/* -------------------------------------------------------------------------- */
+/*
 import { useState } from 'react';
 import { BentoGrid, BentoGridItem } from './ui/bento-grid';
 import { Palette, PenTool, Share2, Monitor, Globe, Type } from 'lucide-react';
@@ -72,10 +183,9 @@ export function Methodology() {
               key={i}
               onMouseEnter={() => setHoveredIndex(i)}
               onMouseLeave={() => setHoveredIndex(null)}
-              className={`transition-all duration-300 ${item.className} ${hoveredIndex !== null && hoveredIndex !== i
-                ? "blur-[2px] opacity-30 grayscale scale-[0.98]"
-                : ""
-                }`}
+              className={`transition-all duration-300 ${item.className} ${
+                hoveredIndex !== null && hoveredIndex !== i ? 'blur-[2px] opacity-30 grayscale scale-[0.98]' : ''
+              }`}
             >
               <BentoGridItem
                 title={item.title}
@@ -92,92 +202,10 @@ export function Methodology() {
   );
 }
 
-const BrandSkeleton = () => (
-  <div className="flex flex-1 w-full h-full min-h-[6rem] rounded-xl bg-neutral-900/50 p-8 overflow-hidden relative group/skeleton">
-    <div className="absolute top-0 right-0 w-32 h-32 bg-orange-500/10 blur-3xl rounded-full group-hover/skeleton:bg-orange-500/20 transition-colors duration-500" />
-    <div className="relative z-10 flex flex-col justify-center items-center h-full w-full">
-      <div className="flex items-center gap-4 mb-4">
-        <div className="w-12 h-12 rounded-lg bg-orange-500/20 flex items-center justify-center transform group-hover/skeleton:scale-110 group-hover/skeleton:rotate-3 transition-transform duration-500">
-          <Palette className="w-6 h-6 text-orange-400" />
-        </div>
-        <div className="h-0.5 w-16 bg-orange-500/20 transform origin-left group-hover/skeleton:scale-x-125 transition-transform duration-500" />
-        <div className="w-24 h-8 rounded bg-white/5 border border-white/10" />
-      </div>
-      <div className="space-y-2 w-full max-w-[200px]">
-        <div className="h-2 w-full bg-white/5 rounded overflow-hidden">
-          <div className="h-full bg-orange-500/10 w-0 group-hover/skeleton:w-full transition-all duration-1000" />
-        </div>
-        <div className="h-2 w-[70%] bg-white/5 rounded overflow-hidden mx-auto">
-          <div className="h-full bg-orange-500/10 w-0 group-hover/skeleton:w-full transition-all duration-1000 delay-100" />
-        </div>
-      </div>
-    </div>
-  </div>
-);
-
-const PrintSkeleton = () => (
-  <div className="flex flex-1 w-full h-full min-h-[6rem] rounded-xl bg-neutral-900/50 p-4 flex-col justify-center items-center relative overflow-hidden group/skeleton">
-    <div className="p-4 bg-white/5 border border-white/10 rounded-2xl backdrop-blur-sm -rotate-6 group-hover/skeleton:rotate-0 group-hover/skeleton:scale-110 transition-all duration-500">
-      <PenTool className="w-10 h-10 text-blue-400" />
-    </div>
-    <div className="mt-4 flex gap-1">
-      {[1, 2, 3].map(i => <div key={i} className="w-1 h-1 rounded-full bg-blue-500/40 group-hover/skeleton:scale-150 transition-transform duration-300" style={{ transitionDelay: `${i * 100}ms` }} />)}
-    </div>
-  </div>
-);
-
-const DigitalSkeleton = () => (
-  <div className="flex flex-1 w-full h-full min-h-[6rem] rounded-xl bg-neutral-900/50 p-4 flex-col justify-center items-center group/skeleton">
-    <div className="relative scale-90 group-hover/skeleton:scale-110 transition-transform duration-500">
-      <div className="absolute inset-0 bg-purple-500/20 blur-xl rounded-full group-hover/skeleton:bg-purple-500/40 transition-colors" />
-      <Share2 className="w-12 h-12 text-purple-400 relative z-10" />
-    </div>
-  </div>
-);
-
-const GlobeHeader = () => (
-  <div className="flex flex-1 w-full h-full min-h-[6rem] rounded-xl bg-[#030303] overflow-hidden relative group/skeleton">
-    <div className="absolute inset-0 z-10 pointer-events-none bg-gradient-to-t from-black via-transparent to-transparent opacity-60" />
-    <div className="w-full h-full transform group-hover/skeleton:scale-105 transition-transform duration-1000">
-      <CobeGlobe />
-    </div>
-  </div>
-);
-
-const CommunicationSkeleton = () => (
-  <div className="flex flex-1 w-full h-full min-h-[6rem] rounded-xl bg-neutral-900/50 p-4 flex-col justify-center items-center group/skeleton">
-    <div className="w-full flex flex-col gap-3 px-4">
-      <div className="h-2 w-[90%] bg-pink-500/20 rounded overflow-hidden">
-        <div className="h-full bg-pink-500/40 w-0 group-hover/skeleton:w-full transition-all duration-700" />
-      </div>
-      <div className="h-2 w-[70%] bg-pink-500/20 rounded overflow-hidden">
-        <div className="h-full bg-pink-500/40 w-0 group-hover/skeleton:w-full transition-all duration-700 delay-100" />
-      </div>
-      <div className="h-2 w-[80%] bg-pink-500/20 rounded overflow-hidden">
-        <div className="h-full bg-pink-500/40 w-0 group-hover/skeleton:w-full transition-all duration-700 delay-200" />
-      </div>
-    </div>
-  </div>
-);
-
-const ContentSkeleton = () => (
-  <div className="flex flex-1 w-full h-full min-h-[6rem] rounded-xl bg-neutral-900/50 p-8 flex-col justify-center relative overflow-hidden group/skeleton">
-    <div className="absolute bottom-0 right-0 w-64 h-64 bg-green-500/5 blur-3xl rounded-full translate-x-1/2 translate-y-1/2 group-hover/skeleton:bg-green-500/10 transition-colors duration-1000" />
-    <div className="flex items-start gap-6 h-full">
-      <div className="p-4 bg-white/5 border border-white/10 rounded-2xl flex-shrink-0 transform group-hover/skeleton:scale-110 group-hover/skeleton:rotate-3 transition-all duration-500">
-        <Type className="w-10 h-10 text-green-400" />
-      </div>
-      <div className="mt-2 space-y-4 w-full max-w-lg">
-        <div className="h-3 w-full bg-white/5 rounded-full overflow-hidden">
-          <div className="h-full bg-green-500/20 w-3/4 group-hover/skeleton:w-full transition-all duration-1000" />
-        </div>
-        <div className="h-3 w-[80%] bg-white/5 rounded-full overflow-hidden">
-          <div className="h-full bg-green-500/20 w-1/2 group-hover/skeleton:w-[85%] transition-all duration-1000 delay-100" />
-        </div>
-        <div className="h-3 w-[90%] bg-white/5 rounded-full overflow-hidden">
-          <div className="h-full bg-green-500/20 w-2/3 group-hover/skeleton:w-[95%] transition-all duration-1000 delay-200" />
-        </div>
-      </div>
-    </div>
-  </div>
-);
+const BrandSkeleton = () => null;
+const PrintSkeleton = () => null;
+const DigitalSkeleton = () => null;
+const GlobeHeader = () => null;
+const CommunicationSkeleton = () => null;
+const ContentSkeleton = () => null;
+*/
