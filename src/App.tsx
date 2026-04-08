@@ -11,6 +11,7 @@ import { Marquee } from './components/Marquee';
 import { TextReveal } from './components/TextReveal';
 import { Methodology } from './components/Methodology';
 // import { Stats } from './components/Stats';
+import { LogoMarquee } from './components/LogoMarquee';
 import { CaseStudies } from './components/CaseStudies';
 import { TechMarquee } from './components/TechMarquee';
 import { Portfolio } from './components/Portfolio';
@@ -38,6 +39,7 @@ function App() {
         <TextReveal />
         <Methodology />
         {/* <Stats /> */}
+        <LogoMarquee />
         <CaseStudies />
         <TechMarquee />
         <Portfolio />
