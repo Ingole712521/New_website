@@ -3,8 +3,8 @@ import { ArrowRight } from 'lucide-react';
 import gsap from 'gsap';
 import { BackgroundBeams } from './background';
 
-/** Served from `public/ChatGPT Image Apr 7, 2026, 04_42_02 PM.png` */
-const HERO_BG = encodeURI('/ChatGPT Image Apr 7, 2026, 04_42_02 PM.png');
+/** Served from `public/homepage/homepage1.jpeg` */
+const HERO_BG = encodeURI('/homepage/homepage1.jpeg');
 
 export function Hero() {
   const contentRef = React.useRef(null);
@@ -30,7 +30,7 @@ export function Hero() {
       {/* Full-bleed hero background image (behind content). */}
       <div className="pointer-events-none absolute inset-0">
         <div
-          className="absolute inset-0 bg-cover bg-no-repeat opacity-35 sm:opacity-40 lg:opacity-45 [background-image:var(--hero-bg)] bg-[position:right_10%] sm:bg-[position:65%_12%] lg:bg-[position:70%_14%]"
+          className="absolute inset-0 bg-cover bg-no-repeat [background-image:var(--hero-bg)] bg-position-[85%_10%] sm:bg-position-[60%_12%] lg:bg-position-[62%_14%]"
           style={
             {
               '--hero-bg': `url("${HERO_BG}")`,
@@ -39,9 +39,7 @@ export function Hero() {
           }
           aria-hidden
         />
-        {/* Darken left for readable text + soften top for navbar. */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black via-black/85 to-black/40 lg:from-black lg:via-black/75 lg:to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/90 via-black/30 to-black/75" />
+        
         <BackgroundBeams className="opacity-25" />
       </div>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
