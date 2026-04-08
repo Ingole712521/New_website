@@ -18,7 +18,7 @@ export function Marquee() {
   return (
     <div className="relative z-10 w-full overflow-hidden border-y border-white/5 bg-black">
       {/* Top Row */}
-      <div className="bg-[#FF8A3D] py-4 overflow-hidden relative">
+      <div className="bg-[#ee3232] py-4 overflow-hidden relative">
         <div className="marquee-left flex items-center gap-12">
           {[...Array(2)].map((_, setIndex) => (
             topRowPhrases.map((phrase, idx) => (

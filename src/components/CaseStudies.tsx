@@ -25,11 +25,50 @@ function assetUrl(folder: 'mailer' | 'ui-creative', file: string) {
     return `/${folder}/${encodeURIComponent(file)}`;
 }
 
+/** Match Tailwind `duration-500` + small buffer so unmount runs after transitions finish */
+const LIGHTBOX_TRANSITION_MS = 550;
+
 export function CaseStudies() {
     const sectionRef = React.useRef<HTMLDivElement>(null);
     const [lightbox, setLightbox] = React.useState<{ src: string; title: string } | null>(null);
+    const [lightboxVisible, setLightboxVisible] = React.useState(false);
+    const lightboxWasOpenRef = React.useRef(false);
 
-    const closeLightbox = useCallback(() => setLightbox(null), []);
+    const finishCloseLightbox = useCallback(() => {
+        setLightbox(null);
+        lightboxWasOpenRef.current = false;
+    }, []);
+
+    const openLightbox = useCallback((payload: { src: string; title: string }) => {
+        setLightbox(payload);
+    }, []);
+
+    const closeLightbox = useCallback(() => {
+        setLightboxVisible(false);
+    }, []);
+
+    React.useEffect(() => {
+        if (!lightbox) {
+            setLightboxVisible(false);
+            return;
+        }
+        setLightboxVisible(false);
+        const id = requestAnimationFrame(() => {
+            requestAnimationFrame(() => setLightboxVisible(true));
+        });
+        return () => cancelAnimationFrame(id);
+    }, [lightbox]);
+
+    React.useEffect(() => {
+        if (!lightbox) return;
+        if (lightboxVisible) {
+            lightboxWasOpenRef.current = true;
+            return;
+        }
+        if (!lightboxWasOpenRef.current) return;
+        const t = window.setTimeout(finishCloseLightbox, LIGHTBOX_TRANSITION_MS);
+        return () => clearTimeout(t);
+    }, [lightbox, lightboxVisible, finishCloseLightbox]);
 
     React.useEffect(() => {
         if (!lightbox) return;
@@ -105,14 +144,14 @@ export function CaseStudies() {
                                 <Mail size={20} />
                             </div>
                             <div>
-                                <h3 className="text-xl font-bold text-white">Email & mailers</h3>
+                                <h3 className="text-xl font-bold text-white">OTT Platform and Email Marketing</h3>
                                 <p className="text-sm text-gray-500">Campaign and promotional email designs</p>
                             </div>
                         </div>
                         <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-white/[0.02]">
-                            <div className="pointer-events-none absolute inset-y-0 left-0 w-20 bg-gradient-to-r from-black to-transparent z-10" />
-                            <div className="pointer-events-none absolute inset-y-0 right-0 w-20 bg-gradient-to-l from-black to-transparent z-10" />
-                            <div className="project-slider group/slider py-6">
+                            <div className="pointer-events-none absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-black to-transparent z-10" />
+                            <div className="pointer-events-none absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-black to-transparent z-10" />
+                            <div className="project-slider group/slider py-8 md:py-10">
                                 <div className="project-track project-track-left">
                                     {[...MAILER, ...MAILER].map(({ file, title }, idx) => {
                                         const src = assetUrl('mailer', file);
@@ -120,8 +159,8 @@ export function CaseStudies() {
                                             <button
                                                 key={`${file}-${idx}`}
                                                 type="button"
-                                                onClick={() => setLightbox({ src, title })}
-                                                className="project-card mx-3 w-[260px] sm:w-[300px] lg:w-[340px] shrink-0 group text-left rounded-2xl overflow-hidden border border-white/10 bg-black/20 hover:border-white/20 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500/60"
+                                                onClick={() => openLightbox({ src, title })}
+                                                className="project-card mx-3 w-[300px] sm:w-[360px] lg:w-[400px] shrink-0 group text-left rounded-2xl overflow-hidden border border-white/10 bg-black/20 hover:border-white/20 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500/60"
                                             >
                                                 <div className="relative aspect-[4/3] overflow-hidden bg-white/5">
                                                     <img
@@ -154,7 +193,7 @@ export function CaseStudies() {
                                 <Palette size={20} />
                             </div>
                             <div>
-                                <h3 className="text-xl font-bold text-white">UI & creative</h3>
+                                <h3 className="text-xl font-bold text-white"></h3>
                                 <p className="text-sm text-gray-500">Sports league graphics and visual design</p>
                             </div>
                         </div>
@@ -169,7 +208,7 @@ export function CaseStudies() {
                                             <button
                                                 key={`${file}-${idx}`}
                                                 type="button"
-                                                onClick={() => setLightbox({ src, title })}
+                                                onClick={() => openLightbox({ src, title })}
                                                 className="project-card mx-3 w-[260px] sm:w-[300px] lg:w-[340px] shrink-0 group text-left rounded-2xl overflow-hidden border border-white/10 bg-black/20 hover:border-white/20 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-violet-500/60"
                                             >
                                                 <div className="relative aspect-[4/3] overflow-hidden bg-white/5">
@@ -242,7 +281,9 @@ export function CaseStudies() {
 
             {lightbox && (
                 <div
-                    className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-8 bg-black/90 backdrop-blur-sm"
+                    className={`fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-8 bg-black/90 backdrop-blur-sm transition-opacity duration-500 ease-out motion-reduce:duration-150 motion-reduce:ease-linear ${
+                        lightboxVisible ? 'opacity-100' : 'opacity-0'
+                    }`}
                     role="dialog"
                     aria-modal="true"
                     aria-label={lightbox.title}
@@ -251,13 +292,19 @@ export function CaseStudies() {
                     <button
                         type="button"
                         onClick={closeLightbox}
-                        className="absolute top-4 right-4 z-[101] p-2 rounded-full bg-white/10 text-white hover:bg-white/20 transition-colors"
+                        className={`absolute top-4 right-4 z-[101] p-2 rounded-full bg-white/10 text-white hover:bg-white/20 transition-colors duration-300 ${
+                            lightboxVisible ? 'opacity-100' : 'opacity-0'
+                        }`}
                         aria-label="Close"
                     >
                         <X size={22} />
                     </button>
                     <div
-                        className="relative max-w-5xl max-h-[90vh] w-full flex flex-col items-center gap-4"
+                        className={`relative max-w-5xl max-h-[90vh] w-full flex flex-col items-center gap-4 transition-[opacity,transform] duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] motion-reduce:duration-150 motion-reduce:ease-linear ${
+                            lightboxVisible
+                                ? 'opacity-100 scale-100 translate-y-0'
+                                : 'opacity-0 scale-[0.97] translate-y-3 motion-reduce:scale-100 motion-reduce:translate-y-0'
+                        }`}
                         onClick={(e) => e.stopPropagation()}
                     >
                         <img

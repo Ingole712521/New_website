@@ -50,14 +50,14 @@ export function Hero() {
             <div className="inline-flex items-center px-3 py-1 rounded-full bg-white/5 text-gray-200 text-xs font-semibold tracking-wide uppercase mb-6 border border-white/10">
               Creative studio • Marketing partner
             </div>
-            <h1 className="text-5xl lg:text-7xl font-extrabold tracking-tight text-white leading-[1.05] mb-6">
-              Creative Design.{' '}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 via-pink-500 to-violet-400">
-                Smart Marketing.
+            <h1 className="text-5xl lg:text-7xl font-extrabold tracking-tight text-white leading-[1.05] mb-6 mt-5">
+              Creative Design{' '}
+              <span className="text-transparent bg-clip-text bg-size-[180%_180%] bg-position-[40%_45%] bg-[linear-gradient(125deg,#1a0404_0%,#3d0c0c_22%,#5c1212_42%,#8b1818_62%,#b91f1f_82%,#e03030_100%)]">
+                Smart Marketing
               </span>{' '}
-              Real Impact.
+              Real Impact
             </h1>
-            <p className="text-lg text-gray-300/90 mb-10 max-w-2xl leading-relaxed">
+            <p className="text-lg text-gray-300/90 mb-10 max-w-2xl leading-relaxed mt-5">
               We help brands across every industry grow through thoughtful design and results-driven marketing.
             </p>
 
