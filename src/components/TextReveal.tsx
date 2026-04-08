@@ -10,8 +10,7 @@ export function TextReveal() {
 
   const content = useMemo(
     () => ({
-      intro:
-        'Welcome to R Square Visuals, where creative vision meets technical precision. Founded by Rupesh and Ravi, our agency was built on the idea of providing a seamless, all-in-one platform for high-end design and marketing services.',
+    
       whoTitle: 'Who We Are',
       whoBody:
         'We are a team of dedicated creators specializing in transforming ideas into visual impact. By combining our story with our specific mission, we help brands stand out in a crowded market.',
@@ -29,7 +28,7 @@ export function TextReveal() {
     []
   );
 
-  const introWords = useMemo(() => content.intro.split(' '), [content.intro]);
+  // const introWords = useMemo(() => content.intro.split(' '), [content.intro]);
 
   useLayoutEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
@@ -148,11 +147,11 @@ export function TextReveal() {
               ABOUT US
             </div>
 
-            <h2 className="text-balance text-4xl md:text-6xl font-semibold text-white leading-[1.05] tracking-tight">
-              Design-forward stories. Precision-built visuals.
+            <h2 className="text-balance text-4xl md:text-6xl font-semibold text-white leading-[1.05] tracking-tight p-7">
+              Design-forward stories Precision-built visuals
             </h2>
 
-            <p
+            {/* <p
               ref={introRef}
               className="mt-6 text-pretty text-lg md:text-xl text-white/80 leading-relaxed"
             >
@@ -161,18 +160,18 @@ export function TextReveal() {
                   {word}
                 </span>
               ))}
-            </p>
+            </p> */}
           </div>
 
-          <div className="mx-auto mt-12 grid max-w-5xl grid-cols-1 gap-6 md:grid-cols-2">
-            <div className="rounded-2xl border border-white/10 bg-white/5 p-6 md:p-8 backdrop-blur">
+          <div className="mx-auto mt-12 grid w-full max-w-6xl grid-cols-1 gap-8 md:grid-cols-2">
+            <div className="rounded-2xl border border-white/10 bg-white/5 px-8 pb-8 pt-12 backdrop-blur md:px-10 md:pb-10 md:pt-14">
               <h3 className="text-lg font-semibold text-white tracking-tight">{content.whoTitle}</h3>
               <p ref={whoRef} className="mt-3 text-white/75 leading-relaxed">
                 {content.whoBody}
               </p>
             </div>
 
-            <div className="rounded-2xl border border-white/10 bg-white/5 p-6 md:p-8 backdrop-blur">
+            <div className="rounded-2xl border border-white/10 bg-white/5 px-8 pb-8 pt-12 backdrop-blur md:px-10 md:pb-10 md:pt-14">
               <h3 className="text-lg font-semibold text-white tracking-tight">{content.arsenalTitle}</h3>
               <p className="mt-3 text-white/75 leading-relaxed">{content.arsenalLead}</p>
 

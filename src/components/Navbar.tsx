@@ -49,12 +49,12 @@ export function Navbar() {
             {/* <button className="text-gray-400 hover:text-white transition-transform hover:scale-110">
               <Search className="h-5 w-5" />
             </button> */}
-            <button
+            {/* <button
               onClick={(e: any) => scrollToSection(e, '#contact')}
               className="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2.5 rounded-full font-medium transition-all shadow-lg shadow-blue-500/30 hover:shadow-blue-500/50 hover:-translate-y-0.5"
             >
               Hire me
-            </button>
+            </button> */}
           </div>
           <div className="md:hidden">
             <button onClick={() => setIsOpen(!isOpen)} className="text-gray-400 hover:text-white">
