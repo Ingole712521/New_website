@@ -105,9 +105,6 @@ export function Methodology() {
   );
 }
 
-/* -------------------------------------------------------------------------- */
-/* Previous animated BentoGrid version (commented out per request)             */
-/* -------------------------------------------------------------------------- */
 /*
 import { useState } from 'react';
 import { BentoGrid, BentoGridItem } from './ui/bento-grid';
