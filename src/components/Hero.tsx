@@ -39,7 +39,7 @@ export function Hero() {
           }
           aria-hidden
         />
-        
+
         <BackgroundBeams className="opacity-25" />
       </div>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -48,18 +48,18 @@ export function Hero() {
             <div className="inline-flex items-center px-3 py-1 rounded-full bg-white/5 text-gray-200 text-xs font-semibold tracking-wide uppercase mb-6 border border-white/10">
               Creative studio • Marketing partner
             </div>
-            <h1 className="text-5xl lg:text-7xl font-extrabold tracking-tight text-white leading-[1.05] mb-6 mt-5">
+            <h1 className="text-5xl lg:text-7xl font-extrabold tracking-tight text-white leading-[1.05] mb-6 mt-17">
               Creative Design{' '}
               <span className="text-transparent bg-clip-text bg-size-[180%_180%] bg-position-[40%_45%] bg-[linear-gradient(125deg,#1a0404_0%,#3d0c0c_22%,#5c1212_42%,#8b1818_62%,#b91f1f_82%,#e03030_100%)]">
                 Smart Marketing
               </span>{' '}
               Real Impact
             </h1>
-            <p className="text-lg text-gray-300/90 mb-10 max-w-2xl leading-relaxed mt-5">
+            <p className="text-lg text-gray-300/90 mb-10 max-w-2xl leading-relaxed mt-20">
               We help brands across every industry grow through thoughtful design and results-driven marketing.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4">
+            {/* <div className="flex flex-col sm:flex-row gap-4">
               <a
                 href="#contact"
                 className="bg-white text-black hover:bg-white/90 px-8 py-4 rounded-full font-semibold transition-all shadow-xl shadow-black/30 hover:-translate-y-1 inline-flex items-center justify-center group"
@@ -72,7 +72,7 @@ export function Hero() {
               >
                 View projects
               </a>
-            </div>
+            </div> */}
           </div>
 
 
