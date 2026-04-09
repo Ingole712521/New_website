@@ -3,7 +3,7 @@ import gsap from 'gsap';
 import { BackgroundBeams } from './background';
 
 /** Served from `public/homepage/homepage1.jpeg` */
-const HERO_BG = encodeURI('/homepage/homepage1.jpeg');
+const HERO_BG = encodeURI('/homepage/background2.png');
 
 export function Hero() {
   const contentRef = React.useRef(null);

@@ -33,7 +33,7 @@ export function Navbar() {
       >
         <div className="px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-20">
-            <div className="shrink-0 flex items-center cursor-pointer" onClick={() => (window as any).lenis?.scrollTo(0)}>
+            <div className="shrink-0 flex items-center cursor-pointer mr-10" onClick={() => (window as any).lenis?.scrollTo(0)}>
               <img src={logoIcon} alt="R Square Visuals" className="h-12 w-auto mr-2" />
               {/* <span className="font-bold text-xl tracking-tight text-white">R Square Visuals</span> */}
             </div>
