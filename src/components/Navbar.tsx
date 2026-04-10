@@ -116,7 +116,7 @@ export function Navbar() {
         </div>
 
         {isOpen && (
-          <div className="relative border-t border-white/[0.08] bg-zinc-950/70 px-4 pb-5 pt-2 backdrop-blur-xl md:hidden">
+          <div className="relative border-t border-white/8 bg-zinc-950/70 px-4 pb-5 pt-2 backdrop-blur-xl md:hidden">
             <div
               className="pointer-events-none absolute inset-0 opacity-40"
               style={{
