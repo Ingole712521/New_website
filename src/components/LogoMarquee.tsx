@@ -1,4 +1,14 @@
-const LOGOS: { file: string; alt: string }[] = [
+const LOGOS: { file: string; alt: string; onLight?: boolean }[] = [
+  { file: 'Asset-12@4x.png', alt: 'Cleversocks' },
+  { file: 'Dimension-Brand-guideline-01.png', alt: 'Dimension Music' },
+  { file: 'DrasIce-Logo-OPTIONS-fme-(1)-(1).png', alt: 'Dras Ice' },
+  { file: 'logo-(1).png', alt: 'Ekum Homes' },
+  { file: 'pooja.png', alt: 'Pooja Bhargava', onLight: true },
+  {
+    file: 'NEW LOGO.png',
+    alt: 'Priti Doshi Studio',
+    onLight: true,
+  },
   { file: 'apexform-01.png', alt: 'Apexform' },
   { file: 'neotra.png', alt: 'Neotra' },
   { file: 'levelup gamers.png', alt: 'Levelup Gamers' },
@@ -29,7 +39,12 @@ export function LogoMarquee() {
           {[...LOGOS, ...LOGOS, ...LOGOS].map((logo, idx) => (
             <div
               key={`${logo.file}-${idx}`}
-              className="shrink-0 px-4 py-3 rounded-2xl   backdrop-blur-sm"
+              className={[
+                'shrink-0 px-4 py-3 rounded-2xl backdrop-blur-sm',
+                logo.onLight ? 'bg-white/95 shadow-sm ring-1 ring-black/5' : '',
+              ]
+                .filter(Boolean)
+                .join(' ')}
             >
               <img
                 src={logoSrc(logo.file)}
