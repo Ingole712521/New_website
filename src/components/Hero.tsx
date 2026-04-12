@@ -1,8 +1,6 @@
 import React, { useLayoutEffect } from 'react';
 import gsap from 'gsap';
 import { BackgroundBeams } from './background';
-
-/** Served from `public/homepage/homepage1.jpeg` */
 const HERO_BG = encodeURI('/homepage/background2.png');
 
 export function Hero() {
@@ -26,7 +24,6 @@ export function Hero() {
       id="about"
       className="relative z-0 isolate min-h-[calc(100svh-5rem)] pt-32 pb-24 lg:pt-44 lg:pb-32 overflow-hidden section-hero bg-black"
     >
-      {/* Full-bleed hero background image (behind content). */}
       <div className="pointer-events-none absolute inset-0">
         <div
           className="absolute inset-0 bg-cover bg-no-repeat [background-image:var(--hero-bg)] bg-position-[84%_10%] sm:bg-position-[58%_12%] lg:bg-position-[64%_40%]"
