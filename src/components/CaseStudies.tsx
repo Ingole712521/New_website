@@ -34,6 +34,7 @@ const LOGO_DESIGN: { file: string; title: string }[] = [
     { file: 'DrasIce-Logo-OPTIONS-fme-(1)-(1).png', title: 'Dras Ice' },
     { file: 'klux--02.png', title: 'Klux' },
     { file: 'klux-2-01.jpg', title: 'Klux Candles' },
+    { file: 'yash logo-02.jpg', title: 'Healthy Meals Station' },
 ];
 
 function logoUrl(file: string) {
