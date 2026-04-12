@@ -1,88 +1,25 @@
-import type { ReactNode } from 'react';
-import {
-  SiUnity,
-  SiFlutter,
-  SiThreedotjs,
-  SiBlender,
-  SiFigma,
-  SiMongodb
-} from 'react-icons/si';
 import { cn } from '../lib/utils';
-import { VscVscode } from 'react-icons/vsc';
 
 type MarqueeItem = {
+  file: string;
   name: string;
   color: string;
   glow: string;
-  icon?: ReactNode;
-  /** When set, show this image instead of `icon` */
-  logoSrc?: string;
 };
 
-const techItems: MarqueeItem[] = [
-  {
-    name: "VS Code",
-    icon: <VscVscode className="text-blue-400 text-3xl" />,
-    color: "text-blue-400",
-    glow: "group-hover:shadow-blue-500/20"
-  },
-  {
-    name: "Unity",
-    icon: <SiUnity className="text-white text-3xl" />,
-    color: "text-white",
-    glow: "group-hover:shadow-white/20"
-  },
-  {
-    name: "Flutter",
-    icon: <SiFlutter className="text-cyan-400 text-3xl" />,
-    color: "text-cyan-400",
-    glow: "group-hover:shadow-cyan-400/20"
-  },
-  {
-    name: "Three.js",
-    icon: <SiThreedotjs className="text-white text-3xl" />,
-    color: "text-white",
-    glow: "group-hover:shadow-white/20"
-  },
-  {
-    name: "Blender",
-    icon: <SiBlender className="text-orange-400 text-3xl" />,
-    color: "text-orange-400",
-    glow: "group-hover:shadow-orange-400/20"
-  },
-  {
-    name: "Figma",
-    icon: <SiFigma className="text-pink-400 text-3xl" />,
-    color: "text-pink-400",
-    glow: "group-hover:shadow-pink-400/20"
-  },
-  {
-    name: "MongoDB",
-    icon: <SiMongodb className="text-green-400 text-3xl" />,
-    color: "text-green-400",
-    glow: "group-hover:shadow-green-400/20"
-  },
+const marqueeItems: MarqueeItem[] = [
+  { file: 'ps.jpg.jpeg', name: 'Photoshop', color: 'text-white', glow: 'group-hover:shadow-white/15' },
+  { file: 'ai.jpg.jpeg', name: 'Illustrator', color: 'text-white', glow: 'group-hover:shadow-white/15' },
+  { file: 'id.jpg.jpeg', name: 'InDesign', color: 'text-white', glow: 'group-hover:shadow-white/15' },
+  { file: 'ae.jpg.jpeg', name: 'After Effects', color: 'text-white', glow: 'group-hover:shadow-white/15' },
+  { file: 'pr.jpg.jpeg', name: 'Premiere Pro', color: 'text-white', glow: 'group-hover:shadow-white/15' },
+  { file: 'lr.jpg.jpeg', name: 'Lightroom', color: 'text-white', glow: 'group-hover:shadow-white/15' },
+  { file: 'cdr.jpg.jpeg', name: 'CorelDRAW', color: 'text-white', glow: 'group-hover:shadow-white/15' },
 ];
 
-/** Logos from `public/workon` — appended after tech stack items */
-const WORKON_FILES: { file: string; name: string }[] = [
-  { file: 'ps.jpg.jpeg', name: 'Photoshop' },
-  { file: 'ai.jpg.jpeg', name: 'Illustrator' },
-  { file: 'id.jpg.jpeg', name: 'InDesign' },
-  { file: 'ae.jpg.jpeg', name: 'After Effects' },
-  { file: 'pr.jpg.jpeg', name: 'Premiere Pro' },
-  { file: 'lr.jpg.jpeg', name: 'Lightroom' },
-  { file: 'cdr.jpg.jpeg', name: 'CorelDRAW' },
-];
-
-const workonItems: MarqueeItem[] = WORKON_FILES.map(({ file, name }) => ({
-  name,
-  logoSrc: `/workon/${encodeURIComponent(file)}`,
-  color: 'text-white',
-  glow: 'group-hover:shadow-white/15',
-}));
-
-const marqueeItems: MarqueeItem[] = [...techItems, ...workonItems];
+function workonUrl(file: string) {
+  return `/workon/${encodeURIComponent(file)}`;
+}
 
 function MarqueeCard({
   item,
@@ -91,10 +28,12 @@ function MarqueeCard({
   item: MarqueeItem;
   iconTiltClass: string;
 }) {
+  const logoSrc = workonUrl(item.file);
+
   return (
     <div
       className={cn(
-        'group flex items-center gap-5 bg-white/[0.03] border border-white/10 px-10 py-5 rounded-2xl backdrop-blur-md transition-all duration-500 hover:bg-white/[0.08] hover:scale-105 hover:border-white/20 min-w-[240px] shadow-2xl',
+        'group flex flex-nowrap items-center gap-5 bg-white/[0.03] border border-white/10 px-8 sm:px-10 py-5 rounded-2xl backdrop-blur-md transition-all duration-500 hover:bg-white/[0.08] hover:scale-105 hover:border-white/20 min-w-[260px] w-max shadow-2xl',
         item.glow
       )}
     >
@@ -104,21 +43,17 @@ function MarqueeCard({
           iconTiltClass
         )}
       >
-        {item.logoSrc ? (
-          <img
-            src={item.logoSrc}
-            alt={item.name}
-            className="max-h-10 max-w-10 object-contain"
-            loading="lazy"
-            decoding="async"
-          />
-        ) : (
-          item.icon
-        )}
+        <img
+          src={logoSrc}
+          alt={item.name}
+          className="max-h-10 max-w-10 object-contain"
+          loading="lazy"
+          decoding="async"
+        />
       </div>
       <span
         className={cn(
-          'text-2xl font-bold tracking-tight opacity-70 group-hover:opacity-100 transition-opacity',
+          'text-2xl font-bold tracking-tight opacity-70 group-hover:opacity-100 transition-opacity whitespace-nowrap shrink-0',
           item.color
         )}
       >
@@ -129,9 +64,7 @@ function MarqueeCard({
 }
 
 export function TechMarquee() {
-  const forward = [...marqueeItems, ...marqueeItems, ...marqueeItems];
-  const reversedBase = [...marqueeItems].reverse();
-  const backward = [...reversedBase, ...marqueeItems, ...marqueeItems];
+  const trackItems = [...marqueeItems, ...marqueeItems, ...marqueeItems];
 
   return (
     <section className="py-32 bg-black overflow-hidden relative">
@@ -154,9 +87,9 @@ export function TechMarquee() {
 
           <div className="flex overflow-hidden transform skew-y-1">
             <div className="flex animate-marquee gap-8 min-w-full">
-              {forward.map((item, idx) => (
+              {trackItems.map((item, idx) => (
                 <MarqueeCard
-                  key={`f-${idx}-${item.name}-${item.logoSrc ?? 'icon'}`}
+                  key={`row1-${idx}-${item.name}-${item.file}`}
                   item={item}
                   iconTiltClass="transform group-hover:rotate-12 transition-transform duration-500"
                 />
@@ -164,13 +97,13 @@ export function TechMarquee() {
             </div>
           </div>
 
-          <div className="flex overflow-hidden transform -skew-y-1">
+          <div className="flex overflow-hidden transform skew-y-1">
             <div className="flex animate-marquee-reverse gap-8 min-w-full">
-              {backward.map((item, idx) => (
+              {trackItems.map((item, idx) => (
                 <MarqueeCard
-                  key={`b-${idx}-${item.name}-${item.logoSrc ?? 'icon'}`}
+                  key={`row2-${idx}-${item.name}-${item.file}`}
                   item={item}
-                  iconTiltClass="transform group-hover:-rotate-12 transition-transform duration-500"
+                  iconTiltClass="transform group-hover:rotate-12 transition-transform duration-500"
                 />
               ))}
             </div>
