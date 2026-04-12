@@ -29,6 +29,11 @@ const LOGO_DESIGN: { file: string; title: string }[] = [
     { file: 'apexform-01.png', title: 'Apexform' },
     { file: 'levelup gamers.png', title: 'Levelup Gamers' },
     { file: 'alif view white logo.png', title: 'Alif View' },
+    { file: 'Arohi logo-01.png', title: 'Arohi Mehendi' },
+    { file: 'Dimension-Brand-guideline-01.png', title: 'Dimension Music' },
+    { file: 'DrasIce-Logo-OPTIONS-fme-(1)-(1).png', title: 'Dras Ice' },
+    { file: 'klux--02.png', title: 'Klux' },
+    { file: 'klux-2-01.jpg', title: 'Klux Candles' },
 ];
 
 function logoUrl(file: string) {
@@ -270,14 +275,14 @@ export function CaseStudies() {
                                                 onClick={() => openLightbox({ src, title })}
                                                 className="project-card mx-3 w-[220px] sm:w-[260px] lg:w-[280px] shrink-0 group text-left rounded-2xl overflow-hidden border border-white/10 bg-black/20 hover:border-white/20 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500/60"
                                             >
-                                                <div className="relative aspect-4/3 overflow-hidden bg-white/5 flex items-center justify-center p-6">
+                                                <div className="relative aspect-4/3 overflow-hidden bg-zinc-800/50 flex items-center justify-center p-6 ring-1 ring-inset ring-white/10">
                                                     <img
                                                         src={src}
                                                         alt={title}
                                                         className="max-h-full max-w-full object-contain transform group-hover:scale-[1.03] transition-transform duration-500"
                                                         loading="lazy"
                                                     />
-                                                    <div className="absolute inset-0 bg-linear-to-t from-black/70 via-black/10 to-transparent opacity-90 group-hover:opacity-95 transition-opacity" />
+                                                    <div className="absolute inset-0 bg-linear-to-t from-black/55 via-black/5 to-transparent opacity-85 group-hover:opacity-90 transition-opacity pointer-events-none" />
                                                     <div className="absolute bottom-0 left-0 right-0 p-4">
                                                         <span className="text-[10px] font-semibold uppercase tracking-wider text-emerald-300/90 mb-1 block">
                                                             Logo
@@ -358,8 +363,8 @@ export function CaseStudies() {
                     </button>
                     <div
                         className={`relative max-w-5xl max-h-[90vh] w-full flex flex-col items-center gap-4 transition-[opacity,transform] duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] motion-reduce:duration-150 motion-reduce:ease-linear ${lightboxVisible
-                                ? 'opacity-100 scale-100 translate-y-0'
-                                : 'opacity-0 scale-[0.97] translate-y-3 motion-reduce:scale-100 motion-reduce:translate-y-0'
+                            ? 'opacity-100 scale-100 translate-y-0'
+                            : 'opacity-0 scale-[0.97] translate-y-3 motion-reduce:scale-100 motion-reduce:translate-y-0'
                             }`}
                         onClick={(e) => e.stopPropagation()}
                     >
