@@ -19,6 +19,27 @@ const UI_CREATIVE: { file: string; title: string }[] = [
     { file: "AIU-men's-champions.jpg", title: "AIU Men's Champions" },
     { file: "AIU-men's-runner-up.jpg", title: "AIU Men's Runner-up" },
     { file: "AIU-men's-Third-Place.jpg", title: "AIU Men's Third Place" },
+    { file: 'Artboard 1.jpg', title: 'Turakhia Optics — creative' },
+    { file: 'Artboard 6.jpg', title: 'Turakhia Optics — smiley' },
+    { file: 'Artboard 7.jpg', title: 'Turakhia Optics — artboard' },
+    { file: 'Baarish-poser-1.jpg', title: 'Baarish poster' },
+    { file: 'bulgari-bv- 8255b - 501-87 -3Artboard 1.jpg', title: 'Bvlgari 8255b — concept A' },
+    { file: 'bulgari-bv- 8255b - 501-87 -3Artboard 2.jpg', title: 'Bvlgari 8255b — concept B' },
+    { file: 'Bvlgari 6184 B 2014P5.jpg', title: 'Bvlgari 6184' },
+    { file: 'MAC-Desktop-CLP-MUP-Product-In-Spotlight.jpg', title: 'MAC — desktop spotlight' },
+    { file: 'Masstige MUP Mobile.jpg', title: 'Masstige makeup — mobile' },
+    { file: 'prada sps 07w 1.jpg', title: 'Prada SPS 07W' },
+    { file: 'Prada SPS 55w 1.jpg', title: 'Prada SPS 55W' },
+    { file: 'Prada VPR 15Y.jpg', title: 'Prada VPR 15Y' },
+    { file: 'saint laurent 1 .jpg', title: 'Saint Laurent — creative A' },
+    { file: 'saint laurent 3.jpg', title: 'Saint Laurent — creative B' },
+    { file: 'Task-for-Visualiser-1.jpg', title: 'Visualiser task' },
+    {
+        file: 'Treehut-Mobile-CLP-Bath-&-Body-Product-In-Spotlight.jpg',
+        title: 'Tree Hut — mobile spotlight',
+    },
+    { file: '1...jpg', title: 'Social creative' },
+    { file: '1.jpg', title: 'Turakhia Optics — Seas the day' },
 ];
 
 function assetUrl(folder: 'mailer' | 'ui-creative', file: string) {

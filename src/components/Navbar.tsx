@@ -31,7 +31,7 @@ export function Navbar() {
   ];
 
   return (
-    <div className="fixed inset-x-0 top-0 z-50 flex justify-center pt-3 sm:pt-4 pointer-events-none px-3 sm:px-4 translate-x-6">
+    <div className="fixed inset-x-0 top-0 z-50 flex justify-center pt-3 sm:pt-4 pointer-events-none px-3 sm:px-4">
       <nav
         id="navbar"
         className="pointer-events-auto relative w-full max-w-5xl overflow-hidden rounded-2xl border border-white/[0.12] bg-zinc-950/55 shadow-[0_8px_40px_rgba(0,0,0,0.55),inset_0_1px_0_rgba(255,255,255,0.06)] backdrop-blur-2xl backdrop-saturate-150 transition-[box-shadow,transform] duration-500 hover:shadow-[0_12px_48px_rgba(0,0,0,0.6),0_0_0_1px_rgba(96,165,250,0.12),inset_0_1px_0_rgba(255,255,255,0.08)]"
