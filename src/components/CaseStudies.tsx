@@ -27,7 +27,6 @@ function assetUrl(folder: 'mailer' | 'ui-creative', file: string) {
 
 const LOGO_DESIGN: { file: string; title: string }[] = [
     { file: 'apexform-01.png', title: 'Apexform' },
-    { file: 'neotra.png', title: 'Neotra' },
     { file: 'levelup gamers.png', title: 'Levelup Gamers' },
     { file: 'alif view white logo.png', title: 'Alif View' },
 ];
