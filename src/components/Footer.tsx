@@ -19,7 +19,7 @@ export function Footer() {
                     <div>
                         <h4 className="font-bold text-white mb-8 text-sm tracking-wider uppercase opacity-30">Pages</h4>
                         <ul className="space-y-4 text-sm text-gray-400">
-                            <li><a href="#" className="hover:text-white transition-colors duration-300">All Products</a></li>
+                            <li><a href="#" className="hover:text-white transition-colors duration-300">All Services</a></li>
                             <li><a href="#" className="hover:text-white transition-colors duration-300">Studio</a></li>
                             <li><a href="#" className="hover:text-white transition-colors duration-300">Clients</a></li>
                             <li><a href="#" className="hover:text-white transition-colors duration-300">Pricing</a></li>
@@ -30,10 +30,13 @@ export function Footer() {
                     <div>
                         <h4 className="font-bold text-white mb-8 text-sm tracking-wider uppercase opacity-30">Socials</h4>
                         <ul className="space-y-4 text-sm text-gray-400">
-                            <li><a href="#" className="hover:text-white transition-colors duration-300">Facebook</a></li>
+                            <li><a href="#" className="hover:text-white transition-colors duration-300">Behance</a></li>
                             <li><a href="#" className="hover:text-white transition-colors duration-300">Instagram</a></li>
                             <li><a href="#" className="hover:text-white transition-colors duration-300">Twitter</a></li>
                             <li><a href="#" className="hover:text-white transition-colors duration-300">LinkedIn</a></li>
+                            <li><a href="#" className="hover:text-white transition-colors duration-300">Redit</a></li>
+                            <li><a href="#" className="hover:text-white transition-colors duration-300">Discord</a></li>
+
                         </ul>
                     </div>
 
@@ -46,14 +49,14 @@ export function Footer() {
                         </ul>
                     </div>
 
-                    <div>
+                    {/* <div>
                         <h4 className="font-bold text-white mb-8 text-sm tracking-wider uppercase opacity-30">Register</h4>
                         <ul className="space-y-4 text-sm text-gray-400">
                             <li><a href="#" className="hover:text-white transition-colors duration-300">Sign Up</a></li>
                             <li><a href="#" className="hover:text-white transition-colors duration-300">Login</a></li>
                             <li><a href="#" className="hover:text-white transition-colors duration-300">Forgot Password</a></li>
                         </ul>
-                    </div>
+                    </div> */}
                 </div>
             </div>
 
