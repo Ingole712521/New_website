@@ -12,10 +12,7 @@ const LOGOS: { file: string; alt: string; onLight?: boolean }[] = [
   { file: 'apexform-01.png', alt: 'Apexform' },
   { file: 'neotra.png', alt: 'Neotra' },
   { file: 'levelup gamers.png', alt: 'Levelup Gamers' },
-  { file: 'home-page-handala-01.png', alt: 'Handala' },
   { file: 'alif view white logo.png', alt: 'Alif View' },
-  { file: 'simpolo.png', alt: 'Simpolo' },
-  { file: 'agl.png', alt: 'AGL' },
 ];
 
 function logoSrc(file: string) {
@@ -29,7 +26,7 @@ export function LogoMarquee() {
       <div className="absolute inset-y-0 right-0 w-40 bg-linear-to-l from-black to-transparent z-20 pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-10">
-        <p className="text-white text-4xl font-bold text-center ">
+        <p className="mt-5 text-3xl md:text-6xl font-extrabold text-white tracking-tight uppercase text-center">
           Trusted by
         </p>
       </div>

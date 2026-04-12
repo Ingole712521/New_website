@@ -50,9 +50,9 @@ export function Methodology() {
             Our capabilities
           </p>
           <h2 className="mt-5 text-3xl md:text-6xl font-extrabold text-white tracking-tight uppercase">
-            Key services{' '}
+            Our Key services{' '}
             <span className="text-transparent bg-clip-text bg-size-[180%_180%] bg-position-[40%_45%] bg-[linear-gradient(125deg,#60a5fa_0%,#a78bfa_45%,#fb7185_100%)]">
-              provided
+              
             </span>
           </h2>
           <p className="mt-4 text-gray-400 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">

@@ -35,7 +35,7 @@ export function Preloader({ onComplete }: { onComplete: () => void }) {
   }, [onComplete]);
 
   return (
-    <div ref={containerRef} className="fixed inset-0 bg-black z-[100] flex flex-col items-center justify-center overflow-hidden">
+    <div ref={containerRef} className="fixed inset-0 bg-black z-[100] flex flex-col items-center justify-center overflow-hidden translate-x-6">
       <div className="absolute top-10 flex items-center space-x-2">
         <div className="w-2 h-2 bg-pink-500"></div>
         <span className="text-white text-[10px] uppercase tracking-[0.2em] font-medium">Delivering firsts</span>

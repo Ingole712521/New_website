@@ -29,10 +29,7 @@ const LOGO_DESIGN: { file: string; title: string }[] = [
     { file: 'apexform-01.png', title: 'Apexform' },
     { file: 'neotra.png', title: 'Neotra' },
     { file: 'levelup gamers.png', title: 'Levelup Gamers' },
-    { file: 'home-page-handala-01.png', title: 'Handala' },
     { file: 'alif view white logo.png', title: 'Alif View' },
-    { file: 'simpolo.png', title: 'Simpolo' },
-    { file: 'agl.png', title: 'AGL' },
 ];
 
 function logoUrl(file: string) {
@@ -97,7 +94,7 @@ export function CaseStudies() {
             document.body.style.overflow = prev;
         };
     }, [lightbox, closeLightbox]);
-    
+
     useLayoutEffect(() => {
         const ctx = gsap.context(() => {
             gsap.from('.case-title', {
@@ -145,7 +142,7 @@ export function CaseStudies() {
         >
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 <div className="text-center mb-16 case-title">
-                    <h2 className="text-4xl lg:text-5xl font-extrabold text-white mb-4">Projects</h2>
+                    <h2 className="text-4xl lg:text-5xl font-extrabold text-white mb-4 uppercase tracking-tight">Projects</h2>
                     <p className="text-gray-400 max-w-2xl mx-auto">
                         Email campaigns and UI creative — selected work from our mailer and design folders.
                     </p>
@@ -207,7 +204,7 @@ export function CaseStudies() {
                                 <Palette size={20} />
                             </div>
                             <div>
-                                <h3 className="text-xl font-bold text-white"></h3>
+                                <h3 className="text-xl font-bold text-white">Social Media</h3>
                                 <p className="text-sm text-gray-500">Sports league graphics and visual design</p>
                             </div>
                         </div>
@@ -344,9 +341,8 @@ export function CaseStudies() {
 
             {lightbox && (
                 <div
-                    className={`fixed inset-0 z-100 flex items-center justify-center p-4 sm:p-8 bg-black/90 backdrop-blur-sm transition-opacity duration-500 ease-out motion-reduce:duration-150 motion-reduce:ease-linear ${
-                        lightboxVisible ? 'opacity-100' : 'opacity-0'
-                    }`}
+                    className={`fixed inset-0 z-100 flex items-center justify-center p-4 sm:p-8 bg-black/90 backdrop-blur-sm transition-opacity duration-500 ease-out motion-reduce:duration-150 motion-reduce:ease-linear ${lightboxVisible ? 'opacity-100' : 'opacity-0'
+                        }`}
                     role="dialog"
                     aria-modal="true"
                     aria-label={lightbox.title}
@@ -355,19 +351,17 @@ export function CaseStudies() {
                     <button
                         type="button"
                         onClick={closeLightbox}
-                        className={`absolute top-4 right-4 z-101 p-2 rounded-full bg-white/10 text-white hover:bg-white/20 transition-colors duration-300 ${
-                            lightboxVisible ? 'opacity-100' : 'opacity-0'
-                        }`}
+                        className={`absolute top-4 right-4 z-101 p-2 rounded-full bg-white/10 text-white hover:bg-white/20 transition-colors duration-300 ${lightboxVisible ? 'opacity-100' : 'opacity-0'
+                            }`}
                         aria-label="Close"
                     >
                         <X size={22} />
                     </button>
                     <div
-                        className={`relative max-w-5xl max-h-[90vh] w-full flex flex-col items-center gap-4 transition-[opacity,transform] duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] motion-reduce:duration-150 motion-reduce:ease-linear ${
-                            lightboxVisible
+                        className={`relative max-w-5xl max-h-[90vh] w-full flex flex-col items-center gap-4 transition-[opacity,transform] duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] motion-reduce:duration-150 motion-reduce:ease-linear ${lightboxVisible
                                 ? 'opacity-100 scale-100 translate-y-0'
                                 : 'opacity-0 scale-[0.97] translate-y-3 motion-reduce:scale-100 motion-reduce:translate-y-0'
-                        }`}
+                            }`}
                         onClick={(e) => e.stopPropagation()}
                     >
                         <img

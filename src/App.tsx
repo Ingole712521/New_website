@@ -33,7 +33,7 @@ function App() {
     <div className="bg-black min-h-screen font-sans selection:bg-blue-500/30 selection:text-white">
       {isLoading && <Preloader onComplete={() => setIsLoading(false)} />}
       <Navbar />
-      <div className={`${isLoading ? 'h-screen overflow-hidden' : ''}`}>
+      <div className={`relative left-6 ${isLoading ? 'h-screen overflow-hidden' : ''}`}>
         <Hero />
         <Marquee />
         <TextReveal />

@@ -29,7 +29,7 @@ export function Hero() {
       {/* Full-bleed hero background image (behind content). */}
       <div className="pointer-events-none absolute inset-0">
         <div
-          className="absolute inset-0 bg-cover bg-no-repeat [background-image:var(--hero-bg)] bg-position-[85%_10%] sm:bg-position-[60%_12%] lg:bg-position-[62%_14%]"
+          className="absolute inset-0 bg-cover bg-no-repeat [background-image:var(--hero-bg)] bg-position-[84%_10%] sm:bg-position-[58%_12%] lg:bg-position-[50%_40%]"
           style={
             {
               '--hero-bg': `url("${HERO_BG}")`,
