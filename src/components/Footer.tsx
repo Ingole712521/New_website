@@ -105,15 +105,11 @@ export function Footer() {
                     </div>
 
                     <div>
-                        <h4 className="font-bold text-white mb-8 text-sm tracking-wider uppercase opacity-30">Socials</h4>
+                        <h4 className="font-bold text-white mb-8 text-sm tracking-wider uppercase opacity-30">Socials*</h4>
                         <ul className="space-y-4 text-sm text-gray-400">
                             <li><a href="#" className="hover:text-white transition-colors duration-300">Behance</a></li>
                             <li><a href="#" className="hover:text-white transition-colors duration-300">Instagram</a></li>
-                            <li><a href="#" className="hover:text-white transition-colors duration-300">Twitter</a></li>
                             <li><a href="#" className="hover:text-white transition-colors duration-300">LinkedIn</a></li>
-                            <li><a href="#" className="hover:text-white transition-colors duration-300">Redit</a></li>
-                            <li><a href="#" className="hover:text-white transition-colors duration-300">Discord</a></li>
-
                         </ul>
                     </div>
 
