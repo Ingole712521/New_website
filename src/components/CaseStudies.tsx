@@ -185,11 +185,11 @@ export function CaseStudies() {
                                 <p className="text-sm text-gray-500">Campaign and promotional email designs</p>
                             </div>
                         </div>
-                        <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-white/2">
+                        <div className="relative left-1/2 w-screen -translate-x-1/2 overflow-hidden border border-white/10 bg-white/2">
                             <div className="pointer-events-none absolute inset-y-0 left-0 w-24 bg-linear-to-r from-black to-transparent z-10" />
                             <div className="pointer-events-none absolute inset-y-0 right-0 w-24 bg-linear-to-l from-black to-transparent z-10" />
                             <div className="project-slider group/slider py-8 md:py-10">
-                                <div className="project-track project-track-left">
+                                <div className="project-track project-track-left gap-3 px-3">
                                     {[...MAILER, ...MAILER].map(({ file, title }, idx) => {
                                         const src = assetUrl('mailer', file);
                                         return (
@@ -197,7 +197,7 @@ export function CaseStudies() {
                                                 key={`${file}-${idx}`}
                                                 type="button"
                                                 onClick={() => openLightbox({ src, title })}
-                                                className="project-card mx-3 w-[300px] sm:w-[360px] lg:w-[400px] shrink-0 group text-left rounded-2xl overflow-hidden border border-white/10 bg-black/20 hover:border-white/20 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500/60"
+                                                className="project-card w-[300px] sm:w-[360px] lg:w-[400px] shrink-0 group text-left rounded-2xl overflow-hidden border border-white/10 bg-black/20 hover:border-white/20 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500/60"
                                             >
                                                 <div className="relative aspect-4/3 overflow-hidden bg-white/5">
                                                     <img
