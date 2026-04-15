@@ -33,7 +33,7 @@ function MarqueeCard({
   return (
     <div
       className={cn(
-        'group flex flex-nowrap items-center gap-5 bg-white/[0.03] border border-white/10 px-8 sm:px-10 py-5 rounded-2xl backdrop-blur-md transition-all duration-500 hover:bg-white/[0.08] hover:scale-105 hover:border-white/20 min-w-[260px] w-max shadow-2xl',
+        'group flex flex-nowrap items-center gap-5 bg-white/3 border border-white/10 px-8 sm:px-10 py-5 rounded-2xl backdrop-blur-md transition-all duration-500 hover:bg-white/8 hover:scale-105 hover:border-white/20 min-w-[260px] w-max shadow-2xl',
         item.glow
       )}
     >
@@ -81,12 +81,12 @@ export function TechMarquee() {
           </p>
         </div>
 
-        <div className="relative flex flex-col gap-12 pointer-events-auto">
-          <div className="absolute inset-y-0 left-0 w-40 bg-gradient-to-r from-black to-transparent z-20 pointer-events-none" />
-          <div className="absolute inset-y-0 right-0 w-40 bg-gradient-to-l from-black to-transparent z-20 pointer-events-none" />
+        <div className="relative left-1/2 flex w-screen -translate-x-1/2 flex-col gap-12 pointer-events-auto">
+          <div className="absolute inset-y-0 left-0 w-40 bg-linear-to-r from-black to-transparent z-20 pointer-events-none" />
+          <div className="absolute inset-y-0 right-0 w-40 bg-linear-to-l from-black to-transparent z-20 pointer-events-none" />
 
           <div className="flex overflow-hidden transform skew-y-1">
-            <div className="flex animate-marquee gap-8 min-w-full">
+            <div className="flex animate-marquee gap-8 min-w-full px-3">
               {trackItems.map((item, idx) => (
                 <MarqueeCard
                   key={`row1-${idx}-${item.name}-${item.file}`}
@@ -98,7 +98,7 @@ export function TechMarquee() {
           </div>
 
           <div className="flex overflow-hidden transform skew-y-1">
-            <div className="flex animate-marquee-reverse gap-8 min-w-full">
+            <div className="flex animate-marquee-reverse gap-8 min-w-full px-3">
               {trackItems.map((item, idx) => (
                 <MarqueeCard
                   key={`row2-${idx}-${item.name}-${item.file}`}

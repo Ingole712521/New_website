@@ -234,11 +234,11 @@ export function CaseStudies() {
                                 <p className="text-sm text-gray-500">Sports league graphics and visual design</p>
                             </div>
                         </div>
-                        <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-white/2">
+                        <div className="relative left-1/2 w-screen -translate-x-1/2 overflow-hidden border border-white/10 bg-white/2">
                             <div className="pointer-events-none absolute inset-y-0 left-0 w-20 bg-linear-to-r from-black to-transparent z-10" />
                             <div className="pointer-events-none absolute inset-y-0 right-0 w-20 bg-linear-to-l from-black to-transparent z-10" />
                             <div className="project-slider group/slider py-6">
-                                <div className="project-track project-track-right">
+                                <div className="project-track project-track-right gap-3 px-3">
                                     {[...UI_CREATIVE, ...UI_CREATIVE].map(({ file, title }, idx) => {
                                         const src = assetUrl('ui-creative', file);
                                         return (
@@ -246,7 +246,7 @@ export function CaseStudies() {
                                                 key={`${file}-${idx}`}
                                                 type="button"
                                                 onClick={() => openLightbox({ src, title })}
-                                                className="project-card mx-3 w-[260px] sm:w-[300px] lg:w-[340px] shrink-0 group text-left rounded-2xl overflow-hidden border border-white/10 bg-black/20 hover:border-white/20 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-violet-500/60"
+                                                className="project-card w-[260px] sm:w-[300px] lg:w-[340px] shrink-0 group text-left rounded-2xl overflow-hidden border border-white/10 bg-black/20 hover:border-white/20 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-violet-500/60"
                                             >
                                                 <div className="relative aspect-4/3 overflow-hidden bg-white/5">
                                                     <img
@@ -283,11 +283,11 @@ export function CaseStudies() {
                                 <p className="text-sm text-gray-500">Brand identities and logo explorations</p>
                             </div>
                         </div>
-                        <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-white/2">
+                        <div className="relative left-1/2 w-screen -translate-x-1/2 overflow-hidden border border-white/10 bg-white/2">
                             <div className="pointer-events-none absolute inset-y-0 left-0 w-20 bg-linear-to-r from-black to-transparent z-10" />
                             <div className="pointer-events-none absolute inset-y-0 right-0 w-20 bg-linear-to-l from-black to-transparent z-10" />
                             <div className="project-slider group/slider py-6">
-                                <div className="project-track project-track-left">
+                                <div className="project-track project-track-left gap-3 px-3">
                                     {[...LOGO_DESIGN, ...LOGO_DESIGN].map(({ file, title }, idx) => {
                                         const src = logoUrl(file);
                                         return (
@@ -295,7 +295,7 @@ export function CaseStudies() {
                                                 key={`${file}-${idx}`}
                                                 type="button"
                                                 onClick={() => openLightbox({ src, title })}
-                                                className="project-card mx-3 w-[220px] sm:w-[260px] lg:w-[280px] shrink-0 group text-left rounded-2xl overflow-hidden border border-white/10 bg-black/20 hover:border-white/20 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500/60"
+                                                className="project-card w-[220px] sm:w-[260px] lg:w-[280px] shrink-0 group text-left rounded-2xl overflow-hidden border border-white/10 bg-black/20 hover:border-white/20 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500/60"
                                             >
                                                 <div className="relative aspect-4/3 overflow-hidden bg-zinc-800/50 flex items-center justify-center p-6 ring-1 ring-inset ring-white/10">
                                                     <img
