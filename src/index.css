@@ -17,6 +17,28 @@
   display: none;
 }
 
+.legal-doc-scroll {
+  -ms-overflow-style: auto;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(34, 211, 238, 0.65) rgba(255, 255, 255, 0.08);
+}
+
+.legal-doc-scroll::-webkit-scrollbar {
+  display: block;
+  width: 10px;
+}
+
+.legal-doc-scroll::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 999px;
+}
+
+.legal-doc-scroll::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, rgba(34, 211, 238, 0.9), rgba(59, 130, 246, 0.9));
+  border-radius: 999px;
+  border: 2px solid rgba(255, 255, 255, 0.08);
+}
+
 @layer utilities {
   .text-stroke {
     -webkit-text-stroke: 1px rgba(255, 255, 255, 0.4);
