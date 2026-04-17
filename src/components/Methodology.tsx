@@ -7,10 +7,10 @@ const services = [
     description: 'Build a memorable brand foundation before scaling campaigns.',
     items: ['Brand logo', 'Brand strategy', 'Brand manual', 'Market research'],
     tone: 'text-orange-600',
-    chip: 'bg-orange-100 text-orange-700 border-orange-200',
-    iconWrap: 'border-orange-200 bg-orange-50',
-    cardGlow: 'from-orange-400/30 via-orange-200/10 to-transparent',
-    orb: 'bg-orange-200/70',
+    chip: 'bg-orange-400/10 text-orange-300 border-orange-300/30',
+    iconWrap: 'border-orange-300/35 bg-orange-400/10',
+    cardGlow: 'from-orange-500/20 via-orange-500/5 to-transparent',
+    orb: 'bg-orange-400/25',
   },
   {
     title: 'Print Branding',
@@ -24,10 +24,10 @@ const services = [
       'Packaging',
     ],
     tone: 'text-blue-600',
-    chip: 'bg-blue-100 text-blue-700 border-blue-200',
-    iconWrap: 'border-blue-200 bg-blue-50',
-    cardGlow: 'from-blue-400/30 via-blue-200/10 to-transparent',
-    orb: 'bg-blue-200/70',
+    chip: 'bg-blue-400/10 text-blue-300 border-blue-300/30',
+    iconWrap: 'border-blue-300/35 bg-blue-400/10',
+    cardGlow: 'from-blue-500/20 via-blue-500/5 to-transparent',
+    orb: 'bg-blue-400/25',
   },
   {
     title: 'Digital Identity',
@@ -35,10 +35,10 @@ const services = [
     description: 'Create a strong digital-first brand presence that grows trust.',
     items: ['Social media handling'],
     tone: 'text-violet-600',
-    chip: 'bg-violet-100 text-violet-700 border-violet-200',
-    iconWrap: 'border-violet-200 bg-violet-50',
-    cardGlow: 'from-violet-400/30 via-violet-200/10 to-transparent',
-    orb: 'bg-violet-200/70',
+    chip: 'bg-violet-400/10 text-violet-300 border-violet-300/30',
+    iconWrap: 'border-violet-300/35 bg-violet-400/10',
+    cardGlow: 'from-violet-500/20 via-violet-500/5 to-transparent',
+    orb: 'bg-violet-400/25',
   },
   {
     title: 'Communication Strategy',
@@ -46,10 +46,10 @@ const services = [
     description: 'Deliver clear messaging that aligns every campaign and channel.',
     items: ['Copywriting', 'Content writing'],
     tone: 'text-pink-600',
-    chip: 'bg-pink-100 text-pink-700 border-pink-200',
-    iconWrap: 'border-pink-200 bg-pink-50',
-    cardGlow: 'from-pink-400/30 via-pink-200/10 to-transparent',
-    orb: 'bg-pink-200/70',
+    chip: 'bg-pink-400/10 text-pink-300 border-pink-300/30',
+    iconWrap: 'border-pink-300/35 bg-pink-400/10',
+    cardGlow: 'from-pink-500/20 via-pink-500/5 to-transparent',
+    orb: 'bg-pink-400/25',
   },
 ] as const;
 
@@ -94,7 +94,7 @@ export function Methodology() {
             return (
               <article
                 key={service.title}
-                className="group relative overflow-hidden rounded-[30px] border border-slate-200 bg-white p-7 shadow-[0_30px_60px_-34px_rgba(15,23,42,0.9)] transition duration-300 hover:-translate-y-1.5 hover:shadow-[0_35px_65px_-30px_rgba(15,23,42,0.85)]"
+                className="group relative overflow-hidden rounded-[30px] border border-white/15 bg-linear-to-br from-[#11182e] via-[#0d1328] to-[#090f1f] p-7 shadow-[0_30px_60px_-34px_rgba(2,6,23,0.95)] transition duration-300 hover:-translate-y-1.5 hover:border-white/25 hover:shadow-[0_35px_65px_-30px_rgba(2,6,23,0.9)]"
               >
                 <div className={`pointer-events-none absolute inset-0 bg-linear-to-br ${service.cardGlow} opacity-90`} />
                 <div
@@ -106,18 +106,18 @@ export function Methodology() {
                       <div className={`rounded-2xl border p-3 shadow-sm ${service.iconWrap}`}>
                         <Icon className={`h-5 w-5 ${service.tone}`} />
                       </div>
-                      <h3 className="text-xl font-bold tracking-tight text-slate-900">{service.title}</h3>
+                      <h3 className="text-xl font-bold tracking-tight text-white">{service.title}</h3>
                     </div>
                     <span className={`rounded-full border px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.12em] ${service.chip}`}>
                       Service
                     </span>
                   </div>
 
-                  <p className="mb-4 text-sm leading-relaxed text-slate-600">{service.description}</p>
-                  <p className="mb-3 text-xs font-semibold uppercase tracking-[0.14em] text-slate-500">Key points</p>
+                  <p className="mb-4 text-sm leading-relaxed text-slate-300">{service.description}</p>
+                  <p className="mb-3 text-xs font-semibold uppercase tracking-[0.14em] text-slate-400">Key points</p>
                   <ol className="space-y-2.5">
                     {service.items.map((item, index) => (
-                      <li key={item} className="flex items-start gap-2.5 text-sm text-slate-700">
+                      <li key={item} className="flex items-start gap-2.5 text-sm text-slate-200">
                         <span
                           className={`inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full text-[11px] font-bold ${service.chip}`}
                         >
