@@ -2,67 +2,70 @@ import React, { useLayoutEffect, useMemo } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
+const ABOUT_VIDEO = '/video/video.mp4';
+
 export function TextReveal() {
-  const containerRef = React.useRef<HTMLDivElement>(null);
-  const introRef = React.useRef<HTMLParagraphElement>(null);
+  const containerRef = React.useRef<HTMLElement>(null);
+  const leftPanelRef = React.useRef<HTMLDivElement>(null);
+  const rightPanelRef = React.useRef<HTMLDivElement>(null);
   const whoRef = React.useRef<HTMLParagraphElement>(null);
-  const toolsRef = React.useRef<HTMLDivElement>(null);
 
   const content = useMemo(
     () => ({
-    
       whoTitle: 'Who We Are',
       whoBody:
         'We are a team of dedicated creators specializing in transforming ideas into visual impact. By combining our story with our specific mission, we help brands stand out in a crowded market.',
-      arsenalTitle: 'Our Creative Arsenal',
-      arsenalLead: 'We leverage industry-leading tools to deliver professional results:',
-      tools: [
-        { label: 'Adobe Illustrator', group: 'Static Design' },
-        { label: 'Photoshop', group: 'Static Design' },
-        { label: 'CorelDRAW', group: 'Static Design' },
-        { label: 'InDesign', group: 'Static Design' },
-        { label: 'Premiere Pro', group: 'Motion & Video' },
-        { label: 'After Effects', group: 'Motion & Video' },
-      ],
     }),
     []
   );
 
-  // const introWords = useMemo(() => content.intro.split(' '), [content.intro]);
-
   useLayoutEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
     if (!containerRef.current) return;
-    const ctx = gsap.context(() => {
-      const introWordsEls = introRef.current?.querySelectorAll('.reveal-word');
-      const whoEls = whoRef.current ? [whoRef.current] : [];
-      const toolChips = toolsRef.current?.querySelectorAll('.tool-chip');
 
-      if (introWordsEls?.length) {
+    const ctx = gsap.context(() => {
+      const leftPanel = leftPanelRef.current;
+      const rightPanel = rightPanelRef.current;
+      const whoEls = whoRef.current ? [whoRef.current] : [];
+
+      if (leftPanel) {
         gsap.fromTo(
-          introWordsEls,
-          { opacity: 0, filter: 'blur(10px)', y: 18 },
+          leftPanel,
+          { opacity: 0, x: -30 },
           {
             opacity: 1,
-            filter: 'blur(0px)',
-            y: 0,
-            stagger: 0.06,
-            duration: 0.45,
-            ease: 'power2.out',
+            x: 0,
+            duration: 0.8,
+            ease: 'power3.out',
             scrollTrigger: {
               trigger: containerRef.current,
-              start: 'top 55%',
-              end: 'top 15%',
-              scrub: 1,
+              start: 'top 80%',
             },
-          }
+          },
+        );
+      }
+
+      if (rightPanel) {
+        gsap.fromTo(
+          rightPanel,
+          { opacity: 0, x: 30 },
+          {
+            opacity: 1,
+            x: 0,
+            duration: 0.8,
+            ease: 'power3.out',
+            scrollTrigger: {
+              trigger: containerRef.current,
+              start: 'top 80%',
+            },
+          },
         );
       }
 
       if (whoEls.length) {
         gsap.fromTo(
           whoEls,
-          { opacity: 0, y: 14 },
+          { opacity: 0, y: 10 },
           {
             opacity: 1,
             y: 0,
@@ -70,123 +73,59 @@ export function TextReveal() {
             ease: 'power2.out',
             scrollTrigger: {
               trigger: whoRef.current,
-              start: 'top 75%',
-              end: 'top 45%',
-              scrub: 1,
-            },
-          }
-        );
-      }
-
-      if (toolChips?.length) {
-        gsap.fromTo(
-          toolChips,
-          { opacity: 0, y: 10, filter: 'blur(6px)' },
-          {
-            opacity: 1,
-            y: 0,
-            filter: 'blur(0px)',
-            stagger: 0.05,
-            duration: 0.45,
-            ease: 'power2.out',
-            scrollTrigger: {
-              trigger: toolsRef.current,
               start: 'top 80%',
-              end: 'top 45%',
-              scrub: 1,
             },
-          }
+          },
         );
       }
 
-      // Slide the "What we Provide" section on top of this pinned block
-      const servicesSection = document.querySelector<HTMLElement>('#services');
-      if (servicesSection) {
-        gsap.set(servicesSection, { yPercent: 110, willChange: 'transform' });
-        gsap.to(servicesSection, {
-          yPercent: 0,
-          ease: 'none',
-          scrollTrigger: {
-            trigger: containerRef.current,
-            start: 'top top',
-            end: '+=70%',
-            scrub: true,
-          },
-        });
-      }
-
-      ScrollTrigger.create({
-        trigger: containerRef.current,
-        start: "top top",
-        end: "+=70%",
-        pin: true,
-        pinSpacing: false,
-        scrub: true,
-      });
     }, containerRef);
+
     return () => ctx.revert();
   }, []);
 
   return (
     <section
       ref={containerRef}
-      className="relative z-0 bg-black overflow-hidden border-t border-white/5"
+      className="relative z-0 overflow-hidden border-t border-white/5  py-16 sm:py-20 lg:py-24"
       aria-label="About us"
     >
-      <div aria-hidden className="pointer-events-none absolute inset-0">
-        <div className="absolute -top-24 left-1/2 h-[520px] w-[520px] -translate-x-1/2 rounded-full bg-white/5 blur-3xl" />
-        <div className="absolute -bottom-32 left-[-120px] h-[520px] w-[520px] rounded-full bg-white/5 blur-3xl" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(255,255,255,0.06),rgba(0,0,0,0)_55%)]" />
-      </div>
-
-      <div className="relative mx-auto flex min-h-[80vh] max-w-6xl items-center px-4 py-24 sm:px-6 lg:px-8">
-        <div className="w-full">
-          <div className="mx-auto max-w-4xl text-center">
-            <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs tracking-[0.22em] text-white/70">
-              <span className="h-1.5 w-1.5 rounded-full bg-white/60" />
-              ABOUT US
-            </div>
-
-            <h2 className="text-balance text-4xl md:text-6xl font-semibold text-white leading-[1.05] tracking-tight p-7">
-              Design-forward stories Precision-built visuals
-            </h2>
-
-            {/* <p
-              ref={introRef}
-              className="mt-6 text-pretty text-lg md:text-xl text-white/80 leading-relaxed"
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="overflow-hidden rounded-2xl border border-white/10  ">
+          <div className="grid lg:grid-cols-2">
+            <div
+              ref={leftPanelRef}
+              className=" px-6 py-10 sm:px-10 sm:py-12 lg:px-12 lg:py-14"
             >
-              {introWords.map((word, i) => (
-                <span key={i} className="reveal-word inline-block mr-[0.25em] whitespace-nowrap">
-                  {word}
-                </span>
-              ))}
-            </p> */}
-          </div>
+              <h2 className="text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl leading-[1.08]">
+                Design-forward stories
+                <span className="block text-[#f2f2f2]">Precision-built visuals</span>
+              </h2>
 
-          <div className="mx-auto mt-12 grid w-full max-w-6xl grid-cols-1 gap-8 md:grid-cols-2">
-            <div className="rounded-2xl border border-white/10 bg-white/5 px-8 pb-8 pt-12 backdrop-blur md:px-10 md:pb-10 md:pt-14">
-              <h3 className="text-lg font-semibold text-white tracking-tight">{content.whoTitle}</h3>
-              <p ref={whoRef} className="mt-3 text-white/75 leading-relaxed">
-                {content.whoBody}
-              </p>
+              <div className="mt-8 rounded-xl border border-white/10 bg-black/20 p-5 sm:p-6">
+                <h3 className="text-lg font-semibold tracking-tight text-white">{content.whoTitle}</h3>
+                <p ref={whoRef} className="mt-3 text-sm leading-relaxed text-slate-300 sm:text-base">
+                  {content.whoBody}
+                </p>
+              </div>
+
             </div>
 
-            <div className="rounded-2xl border border-white/10 bg-white/5 px-8 pb-8 pt-12 backdrop-blur md:px-10 md:pb-10 md:pt-14">
-              <h3 className="text-lg font-semibold text-white tracking-tight">{content.arsenalTitle}</h3>
-              <p className="mt-3 text-white/75 leading-relaxed">{content.arsenalLead}</p>
+            <div
+              ref={rightPanelRef}
+              className="relative min-h-[360px] overflow-hidden bg-[#0a0a16] sm:min-h-[420px] lg:min-h-full"
+            >
+              <video
+                src={ABOUT_VIDEO}
+                className="h-full w-full object-cover"
+                autoPlay
+                loop
+                playsInline
+                
+                muted 
 
-              <div ref={toolsRef} className="mt-5 flex flex-wrap gap-2">
-                {content.tools.map((t) => (
-                  <span
-                    key={`${t.group}-${t.label}`}
-                    className="tool-chip inline-flex items-center gap-2 rounded-full border border-white/10 bg-black/30 px-3 py-1.5 text-sm text-white/85"
-                  >
-                    <span className="text-[11px] text-white/50">{t.group}</span>
-                    <span className="h-3 w-px bg-white/10" />
-                    <span className="font-medium">{t.label}</span>
-                  </span>
-                ))}
-              </div>
+                preload="metadata"
+              />
             </div>
           </div>
         </div>
