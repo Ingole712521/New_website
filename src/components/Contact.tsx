@@ -8,7 +8,7 @@ import { cn } from '../lib/utils';
 export function Contact() {
   const [formData, setFormData] = useState({
     fullName: '',
-    email: '',
+    email: '',    
     company: '',
     message: '',
   });
