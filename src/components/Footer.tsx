@@ -91,6 +91,27 @@ export function Footer() {
                             © copyright R Square Visuals 2024. <br />
                             All rights reserved.
                         </p>
+                        <p className="text-gray-500 text-sm mt-3 font-medium leading-relaxed">
+                            Created by{' '}
+                            <a
+                                href="https://nehalingole.in/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="text-gray-400 hover:text-white transition-colors duration-300"
+                            >
+                                Nehal Ingole
+                            </a>
+                            {' '}
+                            ·{' '}
+                            <a
+                                href="https://nehalingole.in/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="text-gray-400 hover:text-white transition-colors duration-300"
+                            >
+                                Portfolio
+                            </a>
+                        </p>
                     </div>
 
                     <div>
