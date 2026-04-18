@@ -26,22 +26,12 @@ export function Contact() {
     }));
   };
 
-  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-
-    if (!formData.fullName || !formData.email || !formData.message) {
-      setStatusType('error');
-      setStatusMessage('Please fill name, email, and message.');
-      return;
-    }
-
-    const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
-    const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
-    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
-
-    if (!serviceId || !templateId || !publicKey) {
-      setStatusType('error');
-      setStatusMessage('Email service is not configured yet.');
+  const submitForm = async (
+    serviceId: string,
+    templateId: string,
+    publicKey: string
+  ) => {
+    if (isSubmitting) {
       return;
     }
 
@@ -79,6 +69,29 @@ export function Contact() {
     } finally {
       setIsSubmitting(false);
     }
+  };
+
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    event.stopPropagation();
+
+    if (!formData.fullName || !formData.email || !formData.message) {
+      setStatusType('error');
+      setStatusMessage('Please fill name, email, and message.');
+      return;
+    }
+
+    const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+    const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
+    if (!serviceId || !templateId || !publicKey) {
+      setStatusType('error');
+      setStatusMessage('Email service is not configured yet.');
+      return;
+    }
+
+    await submitForm(serviceId, templateId, publicKey);
   };
 
   return (
@@ -154,7 +167,7 @@ export function Contact() {
                 </div>
               </div>
 
-              <form className="space-y-8 relative z-10" onSubmit={handleSubmit}>
+              <form className="space-y-8 relative z-10" noValidate onSubmit={handleSubmit}>
                 <div className="space-y-3">
                   <label className="text-base font-bold text-white block tracking-wide">Full name</label>
                   <input
