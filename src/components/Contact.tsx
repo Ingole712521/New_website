@@ -8,7 +8,7 @@ import { cn } from '../lib/utils';
 export function Contact() {
   const [formData, setFormData] = useState({
     fullName: '',
-    email: '',    
+    email: '',
     company: '',
     message: '',
   });
@@ -85,7 +85,7 @@ export function Contact() {
     <section className="py-32 bg-black border-t border-white/5 overflow-hidden" id="contact">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-20 items-start">
-          
+
           <div>
             <div className="mb-12">
               <div className="w-12 h-12 bg-white/5 rounded-xl flex items-center justify-center mb-8 border border-white/10 shadow-lg shadow-blue-500/5">
@@ -95,18 +95,21 @@ export function Contact() {
               <p className="text-gray-400 text-lg max-w-md leading-relaxed">
                 We are always looking for ways to improve our products and services. Contact us and let us know how we can help you.
               </p>
-              
+
               <div className="mt-10 flex flex-wrap gap-x-8 gap-y-4 text-gray-400 text-sm font-medium">
                 <a href="mailto:rsquarevisuals1@gmail.com" className="hover:text-blue-500 transition-colors">rsquarevisuals1@gmail.com</a>
                 <span className="text-white/10 hidden sm:inline">•</span>
                 <span>+91 8983343111</span>
+
+
               </div>
+
             </div>
 
 
             <div className="relative mt-20 opacity-40 hover:opacity-70 transition-opacity duration-700">
               <img src={worldMap} alt="World Map" className="w-full h-auto grayscale" />
-              
+
 
               <div className="absolute top-[40.5%] left-[70.8%] -translate-x-1/2 -translate-y-1/2">
                 <div className="relative">
@@ -129,91 +132,91 @@ export function Contact() {
           <div className="relative group">
 
             <div className="absolute -inset-4 bg-linear-to-r from-blue-500/5 to-purple-500/5 rounded-3xl blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-1000"></div>
-            
-            <div className="relative bg-[#0A0A0A]/80 border border-white/10 rounded-3xl p-8 md:p-12 shadow-2xl overflow-hidden group"
-                 style={{ 
-                   maskImage: 'linear-gradient(to bottom, black 0%, black 90%, transparent 100%)',
-                   WebkitMaskImage: 'linear-gradient(to bottom, black 0%, black 90%, transparent 100%)'
-                 }}>
 
-                <div className="absolute top-0 right-0 w-full h-[400px] pointer-events-none z-0"
-                    style={{ 
-                        maskImage: 'radial-gradient(circle at top right, black, transparent 75%)',
-                        WebkitMaskImage: 'radial-gradient(circle at top right, black, transparent 75%)'
-                    }}>
-                    <div className="absolute top-0 right-0 grid grid-cols-[repeat(20,24px)] grid-rows-[repeat(20,24px)] opacity-[0.08]">
-                        {[...Array(400)].map((_, i) => (
-                            <div key={i} className={cn(
-                                "w-[24px] h-[24px] border-r border-b border-white/20",
-                                [18, 19, 38, 39, 57, 58, 59, 78, 98].includes(i) ? "bg-white/10" : ""
-                            )}></div>
-                        ))}
-                    </div>
+            <div className="relative bg-[#0A0A0A]/80 border border-white/10 rounded-3xl p-8 md:p-12 shadow-2xl overflow-hidden group"
+              style={{
+                maskImage: 'linear-gradient(to bottom, black 0%, black 90%, transparent 100%)',
+                WebkitMaskImage: 'linear-gradient(to bottom, black 0%, black 90%, transparent 100%)'
+              }}>
+
+              <div className="absolute top-0 right-0 w-full h-[400px] pointer-events-none z-0"
+                style={{
+                  maskImage: 'radial-gradient(circle at top right, black, transparent 75%)',
+                  WebkitMaskImage: 'radial-gradient(circle at top right, black, transparent 75%)'
+                }}>
+                <div className="absolute top-0 right-0 grid grid-cols-[repeat(20,24px)] grid-rows-[repeat(20,24px)] opacity-[0.08]">
+                  {[...Array(400)].map((_, i) => (
+                    <div key={i} className={cn(
+                      "w-[24px] h-[24px] border-r border-b border-white/20",
+                      [18, 19, 38, 39, 57, 58, 59, 78, 98].includes(i) ? "bg-white/10" : ""
+                    )}></div>
+                  ))}
+                </div>
+              </div>
+
+              <form className="space-y-8 relative z-10" onSubmit={handleSubmit}>
+                <div className="space-y-3">
+                  <label className="text-base font-bold text-white block tracking-wide">Full name</label>
+                  <input
+                    type="text"
+                    name="fullName"
+                    placeholder="Enter your name"
+                    value={formData.fullName}
+                    onChange={handleChange}
+                    className="w-full bg-[#1A1A1A] border border-white/5 rounded-lg px-4 py-4 text-white placeholder:text-gray-600 focus:outline-none focus:border-white/10 transition-all shadow-inner"
+                  />
                 </div>
 
-                <form className="space-y-8 relative z-10" onSubmit={handleSubmit}>
-                    <div className="space-y-3">
-                        <label className="text-base font-bold text-white block tracking-wide">Full name</label>
-                        <input 
-                            type="text" 
-                            name="fullName"
-                            placeholder="Enter your name" 
-                            value={formData.fullName}
-                            onChange={handleChange}
-                            className="w-full bg-[#1A1A1A] border border-white/5 rounded-lg px-4 py-4 text-white placeholder:text-gray-600 focus:outline-none focus:border-white/10 transition-all shadow-inner"
-                        />
-                    </div>
-                    
-                    <div className="space-y-3">
-                        <label className="text-base font-bold text-white block tracking-wide">Email Address</label>
-                        <input 
-                            type="email" 
-                            name="email"
-                            placeholder="support@rsquare.com" 
-                            value={formData.email}
-                            onChange={handleChange}
-                            className="w-full bg-[#1A1A1A] border border-white/5 rounded-lg px-4 py-4 text-white placeholder:text-gray-600 focus:outline-none focus:border-white/10 transition-all shadow-inner"
-                        />
-                    </div>
-                    
-                    <div className="space-y-3">
-                        <label className="text-base font-bold text-white block tracking-wide">Company</label>
-                        <input 
-                            type="text" 
-                            name="company"
-                            placeholder="Enter your company name" 
-                            value={formData.company}
-                            onChange={handleChange}
-                            className="w-full bg-[#1A1A1A] border border-white/5 rounded-lg px-4 py-4 text-white placeholder:text-gray-600 focus:outline-none focus:border-white/10 transition-all shadow-inner"
-                        />
-                    </div>
-                    
-                    <div className="space-y-3">
-                        <label className="text-base font-bold text-white block tracking-wide">Message</label>
-                        <textarea 
-                            rows={5}
-                            name="message"
-                            placeholder="Type your message here" 
-                            value={formData.message}
-                            onChange={handleChange}
-                            className="w-full bg-[#1A1A1A] border border-white/5 rounded-lg px-4 py-4 text-white placeholder:text-gray-600 focus:outline-none focus:border-white/10 transition-all resize-none shadow-inner"
-                        ></textarea>
-                    </div>
+                <div className="space-y-3">
+                  <label className="text-base font-bold text-white block tracking-wide">Email Address</label>
+                  <input
+                    type="email"
+                    name="email"
+                    placeholder="support@rsquare.com"
+                    value={formData.email}
+                    onChange={handleChange}
+                    className="w-full bg-[#1A1A1A] border border-white/5 rounded-lg px-4 py-4 text-white placeholder:text-gray-600 focus:outline-none focus:border-white/10 transition-all shadow-inner"
+                  />
+                </div>
 
-                    {statusMessage ? (
-                      <p className={statusType === 'success' ? 'text-emerald-400 text-sm' : 'text-red-400 text-sm'}>
-                        {statusMessage}
-                      </p>
-                    ) : null}
-                    
-                    <button
-                        type="submit"
-                        disabled={isSubmitting}
-                        className="bg-[#1A1A1A] hover:bg-[#252525] disabled:opacity-60 disabled:cursor-not-allowed text-white font-semibold py-3 px-10 rounded-lg border border-white/10 transition-all hover:scale-[1.02] active:scale-[0.98] shadow-lg"
-                    >
-                        {isSubmitting ? 'Sending...' : 'Submit'}
-                    </button>
-                </form>
+                <div className="space-y-3">
+                  <label className="text-base font-bold text-white block tracking-wide">Company</label>
+                  <input
+                    type="text"
+                    name="company"
+                    placeholder="Enter your company name"
+                    value={formData.company}
+                    onChange={handleChange}
+                    className="w-full bg-[#1A1A1A] border border-white/5 rounded-lg px-4 py-4 text-white placeholder:text-gray-600 focus:outline-none focus:border-white/10 transition-all shadow-inner"
+                  />
+                </div>
+
+                <div className="space-y-3">
+                  <label className="text-base font-bold text-white block tracking-wide">Message</label>
+                  <textarea
+                    rows={5}
+                    name="message"
+                    placeholder="Type your message here"
+                    value={formData.message}
+                    onChange={handleChange}
+                    className="w-full bg-[#1A1A1A] border border-white/5 rounded-lg px-4 py-4 text-white placeholder:text-gray-600 focus:outline-none focus:border-white/10 transition-all resize-none shadow-inner"
+                  ></textarea>
+                </div>
+
+                {statusMessage ? (
+                  <p className={statusType === 'success' ? 'text-emerald-400 text-sm' : 'text-red-400 text-sm'}>
+                    {statusMessage}
+                  </p>
+                ) : null}
+
+                <button
+                  type="submit"
+                  disabled={isSubmitting}
+                  className="bg-[#1A1A1A] hover:bg-[#252525] disabled:opacity-60 disabled:cursor-not-allowed text-white font-semibold py-3 px-10 rounded-lg border border-white/10 transition-all hover:scale-[1.02] active:scale-[0.98] shadow-lg"
+                >
+                  {isSubmitting ? 'Sending...' : 'Submit'}
+                </button>
+              </form>
             </div>
           </div>
 
