@@ -1,14 +1,30 @@
-import React, { useLayoutEffect, useMemo } from 'react';
+import React, { useLayoutEffect, useMemo, useState } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 const ABOUT_VIDEO = '/video/video.mp4';
+
+function fitVideoBox(panelW: number, panelH: number, videoW: number, videoH: number) {
+  if (panelW <= 0 || panelH <= 0 || videoW <= 0 || videoH <= 0) {
+    return { w: 0, h: 0 };
+  }
+  const panelR = panelW / panelH;
+  const videoR = videoW / videoH;
+  if (panelR > videoR) {
+    const h = panelH;
+    return { w: h * videoR, h };
+  }
+  const w = panelW;
+  return { w, h: w / videoR };
+}
 
 export function TextReveal() {
   const containerRef = React.useRef<HTMLElement>(null);
   const leftPanelRef = React.useRef<HTMLDivElement>(null);
   const rightPanelRef = React.useRef<HTMLDivElement>(null);
   const whoRef = React.useRef<HTMLParagraphElement>(null);
+  const [videoIntrinsic, setVideoIntrinsic] = useState({ w: 16, h: 9 });
+  const [videoFit, setVideoFit] = useState({ w: 0, h: 0 });
 
   const content = useMemo(
     () => ({
@@ -84,6 +100,22 @@ export function TextReveal() {
     return () => ctx.revert();
   }, []);
 
+  useLayoutEffect(() => {
+    const panel = rightPanelRef.current;
+    if (!panel) return;
+
+    const update = () => {
+      const r = panel.getBoundingClientRect();
+      setVideoFit(fitVideoBox(r.width, r.height, videoIntrinsic.w, videoIntrinsic.h));
+    };
+
+    const ro = new ResizeObserver(update);
+    ro.observe(panel);
+    update();
+
+    return () => ro.disconnect();
+  }, [videoIntrinsic]);
+
   return (
     <section
       ref={containerRef}
@@ -113,19 +145,36 @@ export function TextReveal() {
 
             <div
               ref={rightPanelRef}
-              className="relative min-h-[360px] overflow-hidden bg-[#0a0a16] sm:min-h-[420px] lg:min-h-full"
+              className="relative flex min-h-[360px] items-center justify-center overflow-hidden  sm:min-h-[420px] lg:min-h-full"
             >
-              <video
-                src={ABOUT_VIDEO}
-                className="h-full w-full object-cover"
-                autoPlay
-                loop
-                playsInline
-                
-                muted 
-
-                preload="metadata"
-              />
+              <div
+                className="relative max-h-full max-w-full shrink-0"
+                style={
+                  videoFit.w > 0 && videoFit.h > 0
+                    ? { width: `${videoFit.w}px`, height: `${videoFit.h}px` }
+                    : {
+                        width: '100%',
+                        maxHeight: '100%',
+                        aspectRatio: `${videoIntrinsic.w} / ${videoIntrinsic.h}`,
+                      }
+                }
+              >
+                <video
+                  src={ABOUT_VIDEO}
+                  className="absolute inset-0 h-full w-full object-cover"
+                  autoPlay
+                  loop
+                  playsInline
+                  muted
+                  preload="metadata"
+                  onLoadedMetadata={(e) => {
+                    const v = e.currentTarget;
+                    if (v.videoWidth > 0 && v.videoHeight > 0) {
+                      setVideoIntrinsic({ w: v.videoWidth, h: v.videoHeight });
+                    }
+                  }}
+                />
+              </div>
             </div>
           </div>
         </div>
