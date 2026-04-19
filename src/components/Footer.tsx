@@ -10,7 +10,7 @@ type LegalDoc = {
 };
 
 const privacyPolicyContent = {
-    company: 'R Square Visuals',
+    company: 'R Square   Visuals',
     agency: 'Creative Marketing Agency',
     title: 'Privacy Policy',
     effectiveDate: 'April 15, 2026',
