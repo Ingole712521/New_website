@@ -88,7 +88,7 @@ export function Footer() {
                            {/* <span className="font-bold text-xl tracking-tight text-white italic">R Square Visuals</span> */}
                         </div>
                         <p className="text-gray-500 text-sm mt-4 font-medium leading-relaxed">
-                            © copyright R Square Visuals 2024. <br />
+                            © copyright R Square Visuals 2026. <br />
                             All rights reserved.
                         </p>
                         <p className="text-gray-500 text-sm mt-3 font-medium leading-relaxed">
