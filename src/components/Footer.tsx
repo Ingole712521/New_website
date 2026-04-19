@@ -14,23 +14,23 @@ const privacyPolicyContent = {
     agency: 'Creative Marketing Agency',
     title: 'Privacy Policy',
     effectiveDate: 'April 15, 2026',
-    lastUpdated: 'April 15, 2025',
+    lastUpdated: 'April 15, 2026',
 };
 
 const termsContent = {
     company: 'R Square Visuals',
     agency: 'Creative Marketing Agency',
     title: 'Terms of Service',
-    effectiveDate: 'April 15, 2025',
-    lastUpdated: 'April 15, 2025',
+    effectiveDate: 'April 15, 2026',
+    lastUpdated: 'April 15, 2026',
 };
 
 const cookieContent = {
     company: 'R Square Visuals',
     agency: 'Creative Marketing Agency',
     title: 'Cookie Policy',
-    effectiveDate: 'April 15, 2025',
-    lastUpdated: 'April 15, 2025',
+    effectiveDate: 'April 15, 2026',
+    lastUpdated: 'April 15, 2026',
 };
 
 export function Footer() {
