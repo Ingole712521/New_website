@@ -10,7 +10,7 @@ const LOGOS: { file: string; alt: string; onLight?: boolean }[] = [
     onLight: true,
   },
   { file: 'apexform-01.png', alt: 'Apexform' },
-  { file: 'neotra.png', alt: 'Neotra' },
+  // { file: 'neotra.png', alt: 'Neotra' },
   { file: 'levelup gamers.png', alt: 'Levelup Gamers' },
   { file: 'alif view white logo.png', alt: 'Alif View' },
 ];
