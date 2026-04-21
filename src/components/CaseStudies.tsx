@@ -13,12 +13,12 @@ const MAILER: { file: string; title: string }[] = [
 ];
 
 const UI_CREATIVE: { file: string; title: string }[] = [
-    { file: "AIU-Women's-champions.jpg", title: "AIU Women's Champions" },
-    { file: "AIU-Women's-runner-up.jpg", title: "AIU Women's Runner-up" },
-    { file: "AIU-Women's-Third-Place.jpg", title: "AIU Women's Third Place" },
-    { file: "AIU-men's-champions.jpg", title: "AIU Men's Champions" },
-    { file: "AIU-men's-runner-up.jpg", title: "AIU Men's Runner-up" },
-    { file: "AIU-men's-Third-Place.jpg", title: "AIU Men's Third Place" },
+    // { file: "AIU-Women's-champions.jpg", title: "AIU Women's Champions" },
+    // { file: "AIU-Women's-runner-up.jpg", title: "AIU Women's Runner-up" },
+    // { file: "AIU-Women's-Third-Place.jpg", title: "AIU Women's Third Place" },
+    // { file: "AIU-men's-champions.jpg", title: "AIU Men's Champions" },
+    // { file: "AIU-men's-runner-up.jpg", title: "AIU Men's Runner-up" },
+    // { file: "AIU-men's-Third-Place.jpg", title: "AIU Men's Third Place" },
     { file: 'Artboard 1.jpg', title: 'Turakhia Optics — creative' },
     { file: 'Artboard 6.jpg', title: 'Turakhia Optics — smiley' },
     { file: 'Artboard 7.jpg', title: 'Turakhia Optics — artboard' },

@@ -1,5 +1,5 @@
 const LOGOS: { file: string; alt: string; onLight?: boolean }[] = [
-  { file: 'Asset-12@4x.png', alt: 'Cleversocks' },
+  // { file: 'Asset-12@4x.png', alt: 'Cleversocks' },
   { file: 'Dimension-Brand-guideline-01.png', alt: 'Dimension Music' },
   { file: 'DrasIce-Logo-OPTIONS-fme-(1)-(1).png', alt: 'Dras Ice' },
   { file: 'logo-(1).png', alt: 'Ekum Homes' },
